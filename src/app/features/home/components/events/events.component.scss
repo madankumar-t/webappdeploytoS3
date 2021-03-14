@@ -1,0 +1,159 @@
+@import '../../../../../styles/styles.scss';
+@include customScrollbar(':host ::ng-deep .p-dialog-content');
+@include customScrollbar('.event');
+
+.event-heading {
+  width: 95%;
+  height: 44px;
+  @include font(
+    $font-family-roboto,
+    $font-style-normal,
+    12px,
+    $font-weight-bold
+  );
+  line-height: 1.54;
+  color: $color-black;
+  border-bottom: solid 1px #e5e5e5;
+  padding-top: 16px;
+  padding-left: 0.5em;
+  margin: 0 auto;
+}
+.event {
+  height: 24vh;
+  overflow-x: hidden;
+  margin: 0 auto;
+  &__para {
+    padding-left: 0.8em;
+    cursor: pointer;
+    &--date {
+      @include font(
+        $font-family-roboto,
+        $font-style-normal,
+        11px,
+        $font-weight-normal
+      );
+      line-height: 1.45;
+      color: $color-date-font;
+    }
+    &--title {
+      @include font($font-family-roboto, $font-style-normal, 11px, 600);
+      line-height: 1.45;
+      color: #222222;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    &--desc {
+      @include font(
+        $font-family-roboto,
+        $font-style-normal,
+        11px,
+        $font-weight-normal
+      );
+      line-height: 1.45;
+      color: $color-date-font;
+      margin-top: -0.6em;
+      margin-bottom: -0.6em;
+      cursor: pointer;
+    }
+    &--desc.event-show-only-three-lines {
+      overflow: hidden;
+      max-height: 4em;
+      line-height: 1.5em;
+      position: relative;
+      word-break: break-word;
+      &:after {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding-right: 3px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
+:host ::ng-deep .event-d {
+  width: 65%;
+  background-color: red;
+  height: auto;
+  min-width: 200px;
+  min-height: 373px;
+  height: 80vh;
+  & .p-dialog-header {
+    padding: 6px;
+    border: none;
+    background-color: $header-color-primary;
+  }
+  &__content {
+    &--desc {
+      & p {
+        @include font(
+          $font-family-roboto,
+          $font-style-normal,
+          16px,
+          $font-weight-normal
+        );
+        color: #2e2e2e;
+        line-height: 1.66em;
+        word-wrap: break-word;
+        margin-bottom: 20px;
+        vertical-align: baseline;
+        & img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 1.5em;
+          max-width: 850px;
+          max-height: 850px;
+        }
+        & a {
+          & span {
+            color: #2fa5a5;
+          }
+          & img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1.5em;
+            max-width: 850px;
+            max-height: 850px;
+          }
+        }
+        & span {
+          color: #2fa5a5;
+          & a {
+            color: #2fa5a5;
+          }
+        }
+      }
+
+      & h4 {
+        @include font($font-family-roboto, $font-style-normal, 28px, 400);
+        color: #364654;
+        text-transform: none;
+        margin-bottom: 9px;
+        & img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 1.5em;
+          max-width: 850px;
+          max-height: 850px;
+        }
+      }
+      & ul {
+        margin-left: 1.5em;
+        list-style-type: disc;
+        margin-bottom: 1em;
+      }
+    }
+  }
+  & .p-dialog-footer {
+    padding-bottom: 0.2em;
+  }
+}

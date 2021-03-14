@@ -1,0 +1,31 @@
+<div class="container">
+  <s-panel-header
+    pageTitle="Reports"
+    pageIcon="icon-active-reports"
+  ></s-panel-header>
+  <s-action-cards
+    cardsMainTitle="What would you like to do today?"
+    [cardsContent]="cardsContent"
+    (buttonAction)="action($event)"
+  ></s-action-cards>
+  <div class="p-grid cards-wrapper">
+    <div class="p-col-6 inner-cards">
+      <div class="main-heading">Recently used templates</div>
+      <recent-items [reportType]="'report-template'"></recent-items>
+    </div>
+    <div class="p-col-6">
+      <div class="main-heading">Recently viewed</div>
+      <recent-items></recent-items>
+    </div>
+  </div>
+</div>
+<s-pop-up-dialog
+  (closeEvent)="showComingSoon = false"
+  [showComingSoon]="showComingSoon"
+></s-pop-up-dialog>
+<s-workspace-browser-dialog
+  *ngIf="wsBrowserOpen"
+  [visible]="wsBrowserOpen"
+  (onHide)="wsBrowserOpen = false"
+  [defaultTab]="'report'"
+></s-workspace-browser-dialog>

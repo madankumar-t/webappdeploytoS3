@@ -1,0 +1,42 @@
+:host ::ng-deep {
+    .p-datatable-sm {
+        font-size: 11px;
+        th:nth-child(1) {
+            width: 10%;
+        }
+        th:nth-child(2) {
+            width: 35%;
+        }
+        th:nth-child(3) {
+            width: 10%;
+        }
+        th:nth-child(4) {
+            width: 10%;
+        }
+        th:nth-child(5) {
+            width: 20%;
+        }
+        .p-datatable-tbody tr td {
+            border-width: 0px; 
+        }
+        .p-datatable-thead  tr th {
+            border-width: 1px 0px 1px 0px;
+            border-block-color: #a7a8a8;
+            text-align: left;
+        }
+        .p-datatable-thead  tr  th {
+            background: #fff;
+        }
+    }
+}
+a{
+    text-decoration: none;
+}
+.p-datatable .p-datatable-tbody > tr > td {
+    text-align: left;
+    border: 0px;
+    border-width: 0 0 1px 0;
+    padding: 1rem 1rem;
+}
+
+

@@ -1,0 +1,18 @@
+<div class="container">
+  <s-panel-header
+    pageTitle="Exposure"
+    pageIcon="icon-active-exposures"
+  ></s-panel-header>
+  <s-action-cards
+    cardsMainTitle="What would you like to do today?"
+    [cardsContent]="cardsContent"
+    (buttonAction)="action($event)"
+  ></s-action-cards>
+  <div class="cards-wrapper">
+    <recent-items></recent-items>
+  </div>
+</div>
+<s-pop-up-dialog
+  (closeEvent)="showComingSoon = false"
+  [showComingSoon]="showComingSoon"
+></s-pop-up-dialog>

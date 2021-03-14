@@ -1,0 +1,34 @@
+<div
+  class="overlay"
+  *ngIf="visible"
+  (click)="visible = false; onHide.emit($event)"
+></div>
+<p-dialog
+  header=""
+  [(visible)]="visible"
+  [style]="{ width: '90vw' }"
+  [baseZIndex]="10000"
+  [modal]="true"
+  [closeOnEscape]="true"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [closable]="true"
+  [resizable]="true"
+  position="top-right"
+  [dismissableMask]="true"
+  (onHide)="onHide.emit($event)"
+  styleClass="event-d"
+  [transitionOptions]="'0ms'"
+>
+  <ng-template pTemplate="header"> </ng-template>
+  <i class="pi pi-times close-btn" (click)="visible = false"></i>
+  <s-workspace-browser
+    [workspaceListHeight]="'calc(63vh - 4px)'"
+    [ispopup]="true"
+    [minBufferPx]="180 * 5"
+    [maxBufferPx]="180 * 5 * 5"
+    [itemSize]="180 / 5"
+    [rows]="5"
+    [defaultTab]="defaultTab"
+  ></s-workspace-browser>
+</p-dialog>

@@ -1,0 +1,78 @@
+@import '../../../../../styles/styles.scss';
+.main-heading {
+  @include font(Roboto, normal, 12px, bold);
+  margin: 0 0 12px;
+  line-height: 1.67;
+  letter-spacing: normal;
+  text-align: left;
+  color: #222222;
+}
+.rectangle {
+  margin: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  .inner_card {
+    padding: 12px 16px 10px;
+    padding-right: 14px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid transparent;
+  }
+  .inner_card:hover {
+    box-shadow: 0 0 0 1px $primary-color;
+  }
+}
+.rect-heading {
+  @include font(Roboto, normal, 11px, bold);
+  margin: 0 18px 6px 0;
+  line-height: 1.82;
+  letter-spacing: normal;
+  text-align: left;
+  color: #222222;
+}
+.rect-content {
+  @include font(Roboto, normal, 11px, normal);
+  margin: 6px 0 10px;
+  margin-bottom: 2px;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #666666;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.rect-map {
+  // padding: 12px 16px 10px;
+  height: 82px;
+  margin: 10px 0;
+  border-radius: 6px;
+  background-color: rgba(34, 34, 34, 0.1);
+  background-size: cover;
+}
+.img1 {
+  background-image: url('../../../../../assets/images/Analsysis_img1.png');
+}
+.img2 {
+  background-image: url('../../../../../assets/images/Analsysis_img2.png');
+}
+.img3 {
+  background-image: url('../../../../../assets/images/Analsysis_img3.png');
+}
+.launch {
+  @include font(Roboto, normal, 10px, bold);
+  margin: 4px 1px 1.8px 0;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #2aa8a9;
+  cursor: pointer;
+}
+.chevron {
+  width: 16px;
+  height: 16px;
+  margin: 0 0 0 1px;
+  padding: 3px;
+  background-color: #fafafa;
+}

@@ -1,0 +1,56 @@
+@import '../../../../styles/styles.scss';
+@mixin homePageChildComp() {
+  border: solid 1px $homepage-border-color;
+  background-color: $background-color-primary;
+  border-radius: 8px;
+}
+.container {
+  margin: 0;
+  height: 100%;
+  @include flexCenter(row);
+  background-color: $container-background;
+  border-top-left-radius: 10px;
+  .homepage {
+    margin: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    width: calc(100% - 2%);
+    height: calc(100vh - 80px);
+    &__workspaces {
+      width: calc(69.3% - 1px);
+      height: calc(100vh - 45vh);
+      border-radius: 8px;
+    }
+    &__alert {
+      width: calc(30% - 1px);
+      height: calc(100vh - 45vh);
+      @include homePageChildComp();
+      box-shadow: 0 0 10px 0 rgba(34, 34, 34, 0.1);
+    }
+    &__recent-activities {
+      width: calc(20% - 2px);
+      margin-top: 0.7em;
+      height: 32vh;
+      @include homePageChildComp();
+      overflow: hidden;
+      box-shadow: 0 0 10px 0 rgba(34, 34, 34, 0.1);
+    }
+    &__manage-objects {
+      width: calc(50% - 22px);
+      margin: 0.7em 10px 0 10px;
+      height: 32vh;
+      @include homePageChildComp();
+      overflow: hidden;
+      box-shadow: 0 0 10px 0 rgba(34, 34, 34, 0.1);
+    }
+    &__events {
+      width: calc(30% - 2px);
+      margin-top: 0.7em;
+      height: 32vh;
+      overflow: hidden;
+      @include homePageChildComp();
+      box-shadow: 0 0 10px 0 rgba(34, 34, 34, 0.1);
+    }
+  }
+}

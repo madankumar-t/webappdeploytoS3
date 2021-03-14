@@ -1,0 +1,16 @@
+<svg id="tpointer" xmlns="http://www.w3.org/2000/svg" width="19.8" height="52.1" viewBox="0 0 19.8 52.1">
+  <g id="Group_331" data-name="Group 331" transform="translate(111.444 385)">
+    <path id="Path_291" data-name="Path 291" d="M-102-372v39.1" fill="none" stroke="#6f6e8e" stroke-width="1"/>
+  </g>
+  <path id="Path_292" data-name="Path 292" d="M9.9,1A8.9,8.9,0,1,1,1,9.9H1A8.92,8.92,0,0,1,9.9,1Z" stroke="#b4b4b4" stroke-width="2"/>
+  <g id="Group_333" data-name="Group 333" transform="translate(812.033 80.453)">
+    <g id="Group_332" data-name="Group 332" transform="translate(41.329 -40.52)">
+      <path id="Path_293" data-name="Path 293" d="M-846.1-32.9h.5a.215.215,0,0,0,.2-.2,1.445,1.445,0,0,1,.7-1,1.41,1.41,0,0,1,1.4-.1,2.286,2.286,0,0,1,1,.7c.2.2.4.5.6.7.1.2.3.3.5.5s.4.1.6-.1l.2-.2a.367.367,0,0,1,.3.1.188.188,0,0,1,0,.3,1.011,1.011,0,0,1-1.3.4h0a3.044,3.044,0,0,1-.8-.8c-.2-.3-.4-.5-.6-.8a1.06,1.06,0,0,0-1.3-.3.752.752,0,0,0-.5.7h.5v.6c0,.1,0,.1.1.1h0a3.213,3.213,0,0,1,2.1,4.1,3.529,3.529,0,0,1-.8,1.3,2.842,2.842,0,0,1-1.9.9,3.322,3.322,0,0,1-2.7-.9,3.188,3.188,0,0,1-1-2.6,3.127,3.127,0,0,1,2.2-2.8c.1,0,.1-.1.1-.2C-846.1-32.5-846.1-32.7-846.1-32.9Z" fill="#fff"/>
+      <path id="Path_294" data-name="Path 294" d="M-840.5-34.2h.4l-.2,1.1h0C-840.4-33.4-840.4-33.8-840.5-34.2Z" fill="#fff"/>
+      <path id="Path_295" data-name="Path 295" d="M-838.5-32.4v.4l-1.1-.3h0Z" fill="#fff"/>
+      <path id="Path_296" data-name="Path 296" d="M-841.7-33.6l.3-.3.6,1h0Z" fill="#fff"/>
+      <path id="Path_297" data-name="Path 297" d="M-839.1-33.8l.3.3-.9.7h0Z" fill="#fff"/>
+      <path id="Path_298" data-name="Path 298" d="M-839.3-30.9l-.4.2-.3-1.1h0A3.114,3.114,0,0,1-839.3-30.9Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

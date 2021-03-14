@@ -1,0 +1,133 @@
+@import 'styles.scss';
+:host ::ng-deep .p-dialog {
+  margin: 2.5rem 6.5rem 0 0rem;
+  box-shadow: none;
+  & .p-dialog-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 0 10px 0 rgb(34 34 34 / 10%);
+    border-radius: 0.5em 0.5em 0 0;
+    border-bottom: 2px solid $color-light;
+    background-color: #fafafa;
+    &.p-dialog-header .p-dialog-header-icon {
+      position: absolute;
+      right: 1em;
+      top: 1em;
+      z-index: 1000;
+      cursor: pointer;
+      font-size: $font-size-default;
+    }
+    h5 {
+      font-size: $font-size-default;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      margin: 0;
+      color: $color-black;
+    }
+  }
+  :host ::ng-deep .p-dialog-mask {
+    margin: 2.6rem 0 0 0rem;
+  }
+  & .p-dialog-content {
+    overflow: hidden;
+    background-color: #fafafa;
+    padding: 0;
+    border-radius: 0 0 0.5em 0.5em;
+    & .close-btn {
+      position: absolute;
+      right: 3em;
+      top: 2em;
+      z-index: 1000;
+      cursor: pointer;
+      font-size: 0.8em;
+    }
+    & .close-btn {
+      position: absolute;
+      right: 4em;
+      top: 1em;
+      z-index: 1000;
+      cursor: pointer;
+      font-size: 0.8em;
+    }
+    & .workspace {
+      margin: 8px 1px 0 8px;
+      height: 94vh;
+      width: 100%;
+      box-shadow: none;
+      & .workspace-container {
+        padding: 0.5rem 0;
+        width: calc(22% - 8px);
+        overflow: hidden;
+        & .workspaces-item {
+          &__link {
+            cursor: pointer;
+          }
+        }
+        & .p-virtualscroller-item {
+          & .active {
+            border-left: 3px solid $primary-color;
+          }
+        }
+      }
+      & .workspace-recentdata {
+        width: 99%;
+        position: static;
+        & .p-tabview-nav {
+          display: none;
+        }
+        & .p-tabview-panels {
+          padding: 0em 0 0 0.875em !important;
+          .cdk-virtual-scroll-content-wrapper {
+            display: grid;
+            grid-template-columns: 32.5% 32.5% 32.5% !important;
+            column-gap: 4px;
+            row-gap: 8px;
+            background-color: #fafafa;
+          }
+        }
+        & .sort-filter {
+          position: absolute;
+          top: 20px;
+          right: 68px;
+          height: 22px;
+          width: 70%;
+          border-radius: 6px;
+          & .search-box input {
+            width: 250px !important;
+            height: 22px;
+            border-radius: 20px;
+            padding: 9px 0px 9px 35px;
+            border: solid 1px #dddddd;
+            color: #000;
+            @include font(Roboto, normal, 11px, normal);
+            &:focus {
+              border: solid 1px #2ea7a5;
+              background-color: #ffffff;
+              -webkit-animation: animation 2s ease-in-out;
+              -moz-animation: animation 2s ease-in-out;
+            }
+            &:hover {
+              border: solid 1px #2ea7a5;
+              background-color: #ffffff;
+              -webkit-animation: animation 2s ease-in-out;
+              -moz-animation: animation 2s ease-in-out;
+            }
+            & .search-icon {
+              padding-left: 3px;
+            }
+          }
+          & .sort-item {
+            width: 50%;
+            padding-right: 0;
+          }
+          & .filter-item {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,458 @@
+<div class="c-workspace">
+  <div class="p-grid">
+    <div class="p-col c-workspace__search" *ngIf="!ispopup">
+      <div class="p-grid search-c p-jc-between">
+        <div class="p-col-10 search-c__input">
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input
+              type="text"
+              (keyup)="search($event)"
+              class="search-c__input__btn"
+              pInputText
+              placeholder="Search EigenPrism"
+            />
+          </span>
+        </div>
+        <div class="p-col-2 search-c__btn">
+          <p-button
+            label="Quick Add"
+            icon="pi pi-plus"
+            styleClass="search-c__btn--submit"
+            iconPos="right"
+            (onClick)="overlayPanel($event)"
+          >
+          </p-button>
+        </div>
+      </div>
+    </div>
+    <div class="p-grid workspace">
+      <div class="p-col-4 workspace-container" *ngIf="showSideBar">
+        <p-virtualScroller
+          [value]="workspaces"
+          [scrollHeight]="workspaceListHeight"
+          [minBufferPx]="minBufferPx"
+          [maxBufferPx]="maxBufferPx"
+          [itemSize]="itemSize"
+          [rows]="rows"
+          [lazy]="true"
+          (onLazyLoad)="loadWorkspace($event)"
+        >
+          <p-header class="heading">
+            <div class="p-grid fullwidth p-jc-between">
+              <div class="p-col-2 p-ml-3">
+                <div class="box heading__workspace">Workspace</div>
+              </div>
+              <div class="p-col-2 p-mr-1">
+                <div class="box heading__manage">Manage</div>
+              </div>
+            </div>
+            <hr />
+            <div
+              class="p-virtualscroller-item workspace_all"
+              style="height: 20px"
+            >
+              <div
+                routerlinkactive="active"
+                class="workspaces-item"
+                routerLinkActive="active"
+                [ngClass]="{
+                  Gradient: workspaceId == 'all',
+                  active: workspaceId == 'all'
+                }"
+              >
+                <a
+                  [routerLink]="'/home/all'"
+                  (click)="setWorkspace('all')"
+                  *ngIf="!ispopup"
+                  class="workspaces-item__link"
+                  routerLinkActive="labelActive"
+                  #child1RLA="routerLinkActive"
+                >
+                  <div class="item label" routerLinkActive="labelActive">
+                    All Workspaces
+                    <p-badge
+                      *ngIf="!!query"
+                      [value]="workspace_object_count"
+                      severity="info"
+                      styleClass="p-mr-2"
+                    >
+                    </p-badge>
+                  </div>
+                  <span
+                    *ngIf="child1RLA.isActive"
+                    class="pi pi-angle-right label-icon"
+                  ></span>
+                </a>
+                <span
+                  (click)="setWorkspace('all')"
+                  [ngClass]="{ labelActive: workspaceId == 'all' }"
+                  class="workspaces-item__link"
+                  *ngIf="ispopup"
+                >
+                  <div class="item label">
+                    All Workspaces
+                    <p-badge
+                      *ngIf="!!query"
+                      [value]="workspace_object_count"
+                      severity="info"
+                      styleClass="p-mr-2"
+                    >
+                    </p-badge>
+                  </div>
+                  <span
+                    *ngIf="workspaceId == 'all'"
+                    class="pi pi-angle-right label-icon"
+                  ></span>
+                </span>
+              </div>
+            </div>
+          </p-header>
+
+          <ng-template pTemplate="item" let-workspace>
+            <div
+              class="workspaces-item"
+              routerLinkActive="active"
+              [ngClass]="{
+                Gradient: workspaceId == workspace.id,
+                active: workspaceId == workspace.id
+              }"
+            >
+              <a
+                [routerLink]="'/home/' + workspace.id"
+                (click)="setWorkspace(workspace.id)"
+                *ngIf="!ispopup"
+                class="workspaces-item__link"
+                routerLinkActive="labelActive"
+                #child1RLA="routerLinkActive"
+              >
+                <div class="item label" routerLinkActive="labelActive">
+                  {{ workspace.name }}
+                  <p-badge
+                    *ngIf="!!query"
+                    [value]="workspace.itemCount || 0"
+                    severity="info"
+                    styleClass="p-mr-2"
+                  >
+                  </p-badge>
+                </div>
+                <span
+                  *ngIf="child1RLA.isActive"
+                  class="pi pi-angle-right label-icon"
+                ></span>
+              </a>
+              <span
+                (click)="setWorkspace(workspace.id)"
+                [ngClass]="{ labelActive: workspaceId == workspace.id }"
+                class="workspaces-item__link"
+                *ngIf="ispopup"
+              >
+                <div class="item label">
+                  {{ workspace.name }}
+                  <p-badge
+                    *ngIf="!!query"
+                    [value]="workspace.itemCount || 0"
+                    severity="info"
+                    styleClass="p-mr-2"
+                  >
+                  </p-badge>
+                </div>
+                <span
+                  *ngIf="workspaceId == workspace.id"
+                  class="pi pi-angle-right label-icon"
+                ></span>
+                <i
+                  *ngIf="
+                    currentworkspaceId != workspaceId &&
+                    currentworkspaceId == workspace.id
+                  "
+                  class="pi pi-circle-on label-icon wokspace-icon"
+                  aria-hidden="true"
+                ></i>
+              </span>
+            </div>
+          </ng-template>
+        </p-virtualScroller>
+      </div>
+      <div class="p-col-8 workspace-recentdata">
+        <div class="sort-filter p-grid p-jc-end">
+          <div class="search-box p-col" *ngIf="showSearch">
+            <span class="p-input-icon-left">
+              <i class="pi pi-search" style="padding-left: 3px"></i>
+              <input
+                type="text"
+                placeholder="Search Exposures"
+                (keyup)="search($event)"
+              />
+            </span>
+          </div>
+          <div class="sort-item p-col">
+            <p-dropdown
+              [options]="sortCategory"
+              optionLabel="name"
+              (onChange)="sortWorkspace($event)"
+              class="categorysort"
+              [(ngModel)]="selectedSort"
+            >
+              <ng-template pTemplate="selectedItem">
+                <div class="sortcategory-item" *ngIf="selectedSort">
+                  <i class="pi icon pi-sort-alt"></i>
+                  <span class="selectedTxt">{{ selectedSort.name }}</span>
+                </div>
+              </ng-template>
+              <ng-template let-category pTemplate="item">
+                <div class="sortcategory-item">
+                  <div>{{ category.name }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="filter-item p-col">
+            <p-multiSelect
+              [options]="filterCategory"
+              optionLabel="name"
+              [showHeader]="false"
+              defaultLabel="Filters"
+              (onChange)="filterWorkspaceItem($event)"
+              class="categorysort"
+              [(ngModel)]="selectedFilter"
+            >
+              <ng-template let-value pTemplate="selectedItems">
+                <div
+                  (click)="clearFilter()"
+                  *ngIf="selectedFilter && selectedFilter.length > 0"
+                >
+                  <i class="pi pi-times-circle close-icon"></i>
+                  <div class="input-txt-item">Filters</div>
+                </div>
+                <div *ngIf="!selectedFilter || selectedFilter.length === 0">
+                  <i class="icon-ws-filter close-icon"></i>
+                  <div class="input-txt-item">Filters</div>
+                </div>
+              </ng-template>
+              <ng-template let-category pTemplate="item">
+                <div class="sortcategory-item">
+                  <div>{{ category.name }}</div>
+                </div>
+              </ng-template>
+              <ng-template pTemplate="footer">
+                <div
+                  class="clear_btn"
+                  (click)="clearFilter()"
+                  *ngIf="selectedFilter && selectedFilter.length > 0"
+                >
+                  <i class="pi pi-times-circle close-icon"></i>Clear All
+                </div>
+              </ng-template>
+            </p-multiSelect>
+          </div>
+        </div>
+
+        <p-tabView (onChange)="changeTab($event)" [(activeIndex)]="activeIndex">
+          <p-tabPanel header="All" [selected]="defaultTab == 'all'">
+            <ng-template pTemplate="header">
+              <span>All </span>
+              <p-badge
+                *ngIf="!!query"
+                [value]="tabNames[0].objectsCount"
+                severity="info"
+                styleClass="p-mr-2"
+              ></p-badge>
+            </ng-template>
+            <s-object-list
+              [objectItemOptions]="exposureItemOptions"
+              [objectList]="all"
+              [scrollHeight]="ispopup ? 'calc(70vh - 5px)' : 'calc(39vh - 5px)'"
+              (onLazyLoading)="loadWorkspaceObject($event, 'all')"
+            >
+              <ng-template pTemplate="exposure_actions">
+                <span
+                  class="box actions__workspace btn-action"
+                  (click)="showPopup()"
+                  >Manage</span
+                >
+                <span class="line-sep">|</span>
+                <span
+                  class="box actions__manage btn-action"
+                  (click)="showPopup()"
+                  >Analyse</span
+                >
+              </ng-template>
+              <ng-template pTemplate="report_actions">
+                <span
+                  class="box actions__workspace btn-action"
+                  (click)="showPopup()"
+                  >View</span
+                >
+                <span class="line-sep">|</span>
+                <span
+                  class="box actions__manage btn-action"
+                  (click)="showPopup()"
+                  >Analyse</span
+                >
+              </ng-template>
+              <ng-template pTemplate="model_actions">
+                <span
+                  class="box actions__workspace btn-action"
+                  (click)="showPopup()"
+                  >Recall analysis <i class="pi pi-angle-right"></i
+                ></span>
+              </ng-template>
+              <ng-template pTemplate="analysis_actions">
+                <span
+                  class="box actions__workspace btn-action"
+                  (click)="showPopup()"
+                  >Recall analysis
+                  <i class="pi pi-angle-right ml-4 btn-icon"></i>
+                </span>
+              </ng-template>
+            </s-object-list>
+          </p-tabPanel>
+          <p-tabPanel header="Exposures" [selected]="defaultTab == 'exposure'">
+            <ng-template pTemplate="header">
+              <span>Exposures</span>
+              <p-badge
+                *ngIf="!!query"
+                [value]="tabNames[1].objectsCount"
+                severity="info"
+                styleClass="p-mr-2"
+              ></p-badge>
+            </ng-template>
+            <s-object-list
+              *ngIf="activeTab == 'exposure'"
+              [objectItemOptions]="exposureItemOptions"
+              [scrollHeight]="ispopup ? 'calc(70vh - 5px)' : 'calc(39vh - 5px)'"
+              [objectList]="exposures"
+              (onLazyLoading)="loadWorkspaceObject($event, 'exposure')"
+            >
+              <ng-template pTemplate="exposure_actions" *ngIf="!checkBtn">
+                <span
+                  class="box actions__workspace btn-action"
+                  (click)="showPopup()"
+                  >Manage</span
+                >
+                <span class="line-sep">|</span>
+                <span
+                  class="box actions__manage btn-action"
+                  (click)="showPopup()"
+                  >Analyse</span
+                >
+              </ng-template>
+              <ng-template pTemplate="exposure_actions" *ngIf="checkBtn">
+                <span
+                  class="box actions__workspace btn-action"
+                  (click)="selectExposure($event)"
+                  >Select</span
+                >
+              </ng-template>
+            </s-object-list>
+          </p-tabPanel>
+          <p-tabPanel header="Reports" [selected]="defaultTab == 'report'">
+            <ng-template pTemplate="header">
+              <span>Reports</span>
+              <p-badge
+                *ngIf="!!query"
+                [value]="tabNames[2].objectsCount"
+                severity="info"
+                styleClass="p-mr-2"
+              ></p-badge>
+            </ng-template>
+            <s-object-list
+              *ngIf="activeTab == 'report'"
+              [objectItemOptions]="reportItemOptions"
+              [scrollHeight]="ispopup ? 'calc(70vh - 5px)' : 'calc(39vh - 5px)'"
+              [objectList]="reports"
+              (onLazyLoading)="loadWorkspaceObject($event, 'report')"
+            >
+              <ng-template pTemplate="report_actions">
+                <span
+                  class="box actions__workspace btn-action"
+                  (click)="showPopup()"
+                  >View</span
+                >
+                <span class="line-sep">|</span>
+                <span
+                  class="box actions__manage btn-action"
+                  (click)="showPopup()"
+                  >Analyse</span
+                >
+              </ng-template>
+            </s-object-list>
+          </p-tabPanel>
+          <p-tabPanel header="Models" [selected]="defaultTab == 'model'">
+            <ng-template pTemplate="header">
+              <span>Models</span>
+              <p-badge
+                *ngIf="!!query"
+                [value]="tabNames[3].objectsCount"
+                severity="info"
+                styleClass="p-mr-2"
+              ></p-badge>
+            </ng-template>
+            <s-object-list
+              *ngIf="activeTab == 'model'"
+              [objectItemOptions]="reportItemOptions"
+              [scrollHeight]="ispopup ? 'calc(70vh - 5px)' : 'calc(39vh - 5px)'"
+              [objectList]="models"
+              (onLazyLoading)="loadWorkspaceObject($event, 'model')"
+            >
+              <ng-template pTemplate="model_actions">
+                <span
+                  class="box actions__workspace btn-action"
+                  (click)="showPopup()"
+                  >Recall analysis <i class="pi pi-angle-right"></i
+                ></span>
+              </ng-template>
+            </s-object-list>
+          </p-tabPanel>
+          <p-tabPanel header="Analysis" [selected]="defaultTab == 'analysis'">
+            <ng-template pTemplate="header">
+              <span>Analysis</span>
+              <p-badge
+                *ngIf="!!query"
+                [value]="tabNames[4].objectsCount"
+                severity="info"
+                styleClass="p-mr-2"
+              ></p-badge>
+            </ng-template>
+            <s-object-list
+              *ngIf="activeTab == 'analysis'"
+              [objectItemOptions]="reportItemOptions"
+              [scrollHeight]="ispopup ? 'calc(70vh - 5px)' : 'calc(39vh - 5px)'"
+              [objectList]="analysis"
+              (onLazyLoading)="loadWorkspaceObject($event, 'analysis')"
+            >
+              <ng-template pTemplate="analysis_actions">
+                <span
+                  class="box actions__workspace btn-action"
+                  (click)="showPopup()"
+                  >Recall analysis
+                  <i class="pi pi-angle-right ml-4 btn-icon"></i>
+                </span>
+              </ng-template>
+            </s-object-list>
+          </p-tabPanel>
+        </p-tabView>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-contextMenu
+  #ep
+  [global]="false"
+  [model]="exposureMenu"
+  class="contextMenu"
+></p-contextMenu>
+<p-contextMenu
+  #rp
+  [global]="false"
+  [model]="reportMenu"
+  class="contextMenu"
+></p-contextMenu>
+<s-overlay-menu [show]="enable" arrow="top-right"></s-overlay-menu>
+
+<s-pop-up-dialog
+  (closeEvent)="showComingSoon = false"
+  [showComingSoon]="showComingSoon"
+></s-pop-up-dialog>

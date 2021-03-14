@@ -1,0 +1,149 @@
+@import '../../../../styles/styles.scss';
+
+@mixin menuIcon($fontColor) {
+  color: $fontColor;
+  width: 18px;
+  height: 14px;
+}
+
+.card-item {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: $background-color-primary;
+  border: solid 0.5px $background-color-primary;
+  &:hover {
+    box-shadow: 0 10px 30px 0 rgba(34, 34, 34, 0.1);
+    border: solid 0.5px $primary-color;
+  }
+}
+
+.bitmap {
+  background-color: $bitmap-background-color;
+  border-radius: 4px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+  & img {
+    width: 100%;
+    &.tempThumps {
+      border-radius: 4px;
+      -webkit-filter: blur(4px);
+      filter: blur(4px);
+      background-color: $background-color-primary;
+    }
+  }
+  & .template {
+    position: absolute;
+    left: -4px;
+    top: 7px;
+    font-family: Roboto;
+    font-size: 8px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: $light-black;
+    width: 43px;
+    height: 11px;
+    padding: 1px 6px 1px 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    line-height: 1.2;
+    border: solid 0.6px rgba(255, 255, 255, 0.86);
+  }
+}
+
+.head-icon {
+  width: 10px;
+  height: 10px;
+  margin: 0.5rem 0.9rem 0;
+  padding: 0;
+  position: relative;
+  & .icon-type {
+    font-size: 1em !important;
+    &::before {
+      font-size: 1em !important;
+      color: $color-black !important;
+    }
+  }
+}
+
+.content {
+  margin-left: 10px;
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  & .checkbox {
+    padding: 0;
+    text-align: center;
+  }
+  & .heading {
+    @include font(Roboto, normal, 11px, normal);
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.45;
+    letter-spacing: normal;
+    text-align: left;
+    color: $light-black;
+    white-space: nowrap;
+    width: 151px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  & .details {
+    margin: 0;
+    @include font(Roboto, normal, 11px, normal);
+    line-height: 1.45;
+    letter-spacing: normal;
+    text-align: left;
+    color: $color-date-font;
+    width: 151px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  & .actions {
+    @include font($font-family-roboto, normal, 10px, bold);
+    margin: auto 9px 0 0;
+    .right-border {
+      border-left: 1px solid $light-black;
+    }
+    .no-pad {
+      padding: 0px;
+      &.item-right {
+        text-align: right;
+        .ml-4 {
+          margin-left: 4px;
+        }
+        & .btn-icon {
+          padding: 4px;
+          border-radius: 8px;
+          cursor: pointer;
+          &.active {
+            color: $button-icon-color;
+          }
+        }
+      }
+      & i {
+        font-size: 9px;
+        margin-top: 4px;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import 'styles.scss';
+@include customScrollbar(':host ::ng-deep .p-dialog-content');
+:host ::ng-deep {
+    .p-dialog-content{
+        background: #ffffff;
+        color: #495057;
+        padding: 0px !important;
+        border-radius:  0px 0px 14px 14px;
+    }
+    .p-dialog .p-dialog-header {
+        border-radius: 14px 14px 0px 0px;
+        height: 57px;
+    }
+    .p-dialog{
+        border-radius:  14px 14px 14px 14px;
+        top: 45px;
+        background: #fff;
+    }
+    .p-dialog .p-dialog-header {
+        padding: 5px;
+    }
+    .p-dialog .p-dialog-header .p-dialog-title {
+        margin-left: 18px;
+    }
+}
+:host ::ng-deep .dialog-box{
+     width: 50vw; 
+     height: 30vw; 
+     padding: 0px;
+}

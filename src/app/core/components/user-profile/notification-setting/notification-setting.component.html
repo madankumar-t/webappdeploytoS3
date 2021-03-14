@@ -1,0 +1,123 @@
+<hr class="line" />
+
+<div class="p-grid n-grid p-pt-3">
+  <div class="p-col-6 n-grid__para">Alert digest settings</div>
+  <div class="p-col-6 n-grid__col">
+    <label class="switch">
+      <input
+        type="checkbox"
+        [(ngModel)]="alertDigestSettings.isAlertDigestON"
+        checked
+        (click)="alertDigestON($event)"
+      />
+      <span class="slider round"></span>
+    </label>
+  </div>
+</div>
+<p-card styleClass="card" *ngIf="alertDigestSettings.isAlertDigestON">
+  <div class="para head">Send me an Alerts Digest every</div>
+  <div class="p-grid">
+    <div class="radio-item" *ngFor="let item of frequency; let i = index">
+      <input
+        type="radio"
+        [id]="item.label"
+        name="frequency"
+        [checked]="item.checked"
+        [value]="item.name"
+        [checked]="item.selected"
+        (click)="toggleColor(item, i)"
+      />
+      <label
+        [for]="item.label"
+        [ngClass]="{ blue: toggle[i], red: !toggle[i] }"
+        >{{ item.label }}</label
+      >
+    </div>
+    <div class="p-col-4"></div>
+  </div>
+  <div>
+    <p for="firstname1" class="para">Starting from</p>
+    <div class="p-grid">
+      <div class="p-col-2">
+        <p-dropdown
+          [options]="hour"
+          optionLabel="name"
+          styleClass="dropdown"
+          placeholder="HH"
+          dataKey="id"
+          [(ngModel)]="alertDigestSettings.hour"
+        ></p-dropdown>
+      </div>
+      <div class="p-col-2">
+        <p-dropdown
+          [options]="minute"
+          [(ngModel)]="alertDigestSettings.min"
+          optionLabel="name"
+          styleClass="dropdown"
+          placeholder="MM"
+        ></p-dropdown>
+      </div>
+      <div class="p-col-2">
+        <p-dropdown
+          [options]="day"
+          optionLabel="name"
+          styleClass="dropdown"
+          [(ngModel)]="alertDigestSettings.dayFormat"
+        ></p-dropdown>
+      </div>
+      <div class="p-col-6"></div>
+    </div>
+  </div>
+  <div>
+    <p for="firstname1" class="para">For following timezone</p>
+    <div class="p-grid">
+      <div class="p-col-9">
+        <p-dropdown
+          [options]="timeZones"
+          styleClass="dropdown-timezone"
+          optionLabel="nameWithOffset"
+          dataKey="nameWithOffset"
+          [baseZIndex]="10000"
+          appendTo="body"
+          [(ngModel)]="alertDigestSettings.timeZone"
+        ></p-dropdown>
+      </div>
+      <div class="p-col-3"></div>
+    </div>
+  </div>
+</p-card>
+<hr class="line" />
+<div class="p-grid n-grid p-mt-1">
+  <div class="p-col-6 n-grid__para">
+    Pause all individual alert notifications
+  </div>
+  <div class="p-col-6 n-grid__col">
+    <label class="switch">
+      <input type="checkbox" [(ngModel)]="alertDigestSettings.isPaused" />
+      <span class="slider round"></span>
+    </label>
+  </div>
+</div>
+<div class="p-grid grid-button p-mt-2">
+  <div class="p-col-3">
+    <button
+      pButton
+      type="button"
+      label="Discard"
+      class="p-button-outlined"
+      styleClass="button"
+      (click)="cancel()"
+    ></button>
+  </div>
+  <div class="p-col-3 save-button">
+    <button
+      pButton
+      pRipple
+      type="button"
+      label="Save Changes"
+      styleClass="button"
+      (click)="saveAlertDigestSettings()"
+    ></button>
+  </div>
+  <div class="p-col-6"></div>
+</div>

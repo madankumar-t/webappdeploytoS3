@@ -1,0 +1,220 @@
+@import 'styles.scss';
+:host ::ng-deep .p-dialog {
+  margin: 2.5rem 6.5rem 0 0rem;
+  box-shadow: none;
+  & .p-dialog-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 0 10px 0 rgb(34 34 34 / 10%);
+    border-radius: 0.5em 0.5em 0 0;
+    &.p-dialog-header .p-dialog-header-icon {
+      position: absolute;
+      right: 1em;
+      top: 1em;
+      z-index: 1000;
+      cursor: pointer;
+      font-size: $font-size-default;
+    }
+    h5 {
+      font-size: $font-size-default;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.25;
+      margin: 0;
+      color: $color-black;
+    }
+    p {
+      @include font(Roboto, normal, 11px, normal);
+      line-height: 1.45;
+      margin: 4px 0 0 0;
+    }
+  }
+  & .p-dialog-content {
+    overflow: auto;
+    background-color: #fafafa;
+    border-top: 2px solid $color-light;
+    border-radius: 0 0 0.5em 0.5em;
+    margin: -3px auto;
+    & .close-btn {
+      position: absolute;
+      right: 3em;
+      top: 2em;
+      z-index: 1000;
+      cursor: pointer;
+      font-size: 0.8em;
+    }
+
+    .toggle-text {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      border: 1px solid $color-light;
+      border-radius: 6px;
+      width: 294px;
+      height: 48px;
+      padding: $padding-md 12px $padding-md 12px;
+      margin: 16px 0 16px 0;
+      p {
+        display: flex;
+        flex-direction: column;
+        font-family: Roboto;
+        font-style: normal;
+        font-size: $font-size-md;
+        color: #222222;
+        font-weight: bold;
+        line-height: 1.33;
+        margin: 0 0 0 8px;
+
+        span {
+          font-size: $font-size-sm;
+          line-height: 1.2;
+          color: $color-dark;
+          font-weight: normal;
+        }
+      }
+      input[type='checkbox'] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+        margin: 0;
+      }
+
+      label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 12px;
+        height: 12px;
+        background: $color-light;
+        display: block;
+        border-radius: 4px;
+        position: relative;
+        margin-top: 2px;
+      }
+
+      label:after {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 3px;
+        border-bottom: 2px solid #ffffff;
+        border-left: 2px solid #ffffff;
+        transform: rotate(-45deg) scale(0);
+        transition: transform ease 0.25s;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+      }
+
+      input:checked + label {
+        background: #2ea7a5;
+      }
+
+      input:checked + label:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      label:active:after {
+        width: 8px;
+        height: 4px;
+      }
+    }
+
+    .container {
+      background-color: #fafafa;
+      margin: 0 auto;
+      #selected {
+        box-shadow: 0 0 0 1px $primary-color;
+      }
+      .rectangle {
+        margin: 0;
+        border-radius: 8px;
+        grid-row-gap: 2px;
+        .inner_card {
+          padding: 12px;
+          background-color: #ffffff;
+          border-radius: 6px;
+          border: 1px solid transparent;
+          height: 180px;
+        }
+        .inner_card:hover {
+          box-shadow: 0 0 0 1px $primary-color;
+          cursor: pointer;
+        }
+      }
+      .rect-heading {
+        @include font(Roboto, normal, 12px, bold);
+        margin: 0px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #222222;
+      }
+      .rect-content {
+        @include font(Roboto, normal, 10px, normal);
+        margin: 4px 0 0 0;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: left;
+        color: $color-gray;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .rect-map {
+        height: 82px;
+        margin: 4px 0;
+        border-radius: 6px;
+        background-color: rgba(34, 34, 34, 0.1);
+        background-size: cover;
+      }
+      .img1 {
+        background-image: url('../../../../../assets/images/Analsysis_img1.png');
+      }
+      .img2 {
+        background-image: url('../../../../../assets/images/stratification.png');
+      }
+      .img3 {
+        background-image: url('../../../../../assets/images/hazard.png');
+      }
+      .img4 {
+        background-image: url('../../../../../assets/images/Analsysis_img2.png');
+      }
+      .img5 {
+        background-image: url('../../../../../assets/images/event-impact.png');
+      }
+      .img6 {
+        background-image: url('../../../../../assets/images/Analsysis_img3.png');
+      }
+      .img7 {
+        background-image: url('../../../../../assets/images/trend.png');
+      }
+      .launch {
+        @include font(Roboto, normal, 10px, bold);
+        margin: 0.2px 1px 1.8px 0;
+        line-height: 1.6;
+        letter-spacing: normal;
+        color: #2aa8a9;
+        cursor: pointer;
+      }
+      .chevron {
+        width: 16px;
+        height: 16px;
+        margin: 0 0 0 1px;
+        padding: 3px;
+        background-color: #fafafa;
+      }
+    }
+  }
+  & .p-tabview-panels {
+    .cdk-virtual-scroll-content-wrapper {
+      display: grid;
+      grid-template-columns: 32.5% 32.5% 32.5% !important;
+      column-gap: 4px;
+      row-gap: 8px;
+      background-color: #fafafa;
+    }
+  }
+}

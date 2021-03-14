@@ -1,0 +1,199 @@
+@import '../../../../../styles/styles.scss';
+
+.n-grid {
+  &__col {
+    text-align: right;
+  }
+  &__para {
+    @include font(Roboto, normal, 0.7em, normal);
+    color: #222222;
+  }
+}
+:host ::ng-deep .p-button {
+  padding: 0.4rem 1.7rem;
+  @include font(Roboto, normal, 0.7em, bold);
+  border-color: $light-blue;
+  color: $light-blue;
+}
+:host ::ng-deep .save-button {
+  .p-button {
+    padding: 0.6em 0.8em;
+    width: 105px;
+    background-color: $light-blue;
+    color: $header-color-primary;
+  }
+}
+.line {
+  border: none;
+  height: 1px;
+  background-color: #f0f0f0;
+  margin: 0px;
+}
+:host ::ng-deep .card {
+  background-color: $profile-background-color;
+  box-shadow: none !important;
+  .para {
+    @include font(Roboto, normal, 0.7em, normal);
+    color: #222222;
+    // margin-top: 0.2em;
+  }
+  .para.head {
+    padding-top: 0.8em;
+    padding-bottom: 0.5em;
+  }
+  .checkbox {
+    @include font(Roboto, normal, 0.7em, normal);
+  }
+  .p-checkbox-box {
+    border-radius: 50px;
+    height: 17px;
+    width: 17px;
+  }
+  .p-card-body {
+    padding-top: 0;
+  }
+  .p-card-content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .dropdown-timezone {
+    height: 28px;
+    width: 100%;
+    border: none;
+    .p-dropdown-label {
+      font-size: 0.7em;
+      padding-top: 5px;
+      padding-bottom: 4px;
+    }
+    .pi-chevron-down:before {
+      font-size: 0.6em;
+    }
+  }
+}
+:host ::ng-deep .dropdown {
+  height: 28px;
+  width: 100%;
+  border: none;
+  .p-dropdown-trigger {
+    width: 1.6em;
+    .pi-chevron-down:before {
+      font-size: 0.6em;
+    }
+  }
+  .p-dropdown-label {
+    font-size: 0.7em;
+    padding-top: 6px;
+    padding-bottom: 4px;
+    text-overflow: clip;
+  }
+}
+
+//toggle button
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: $light-blue;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $light-blue;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(17px);
+  -ms-transform: translateX(17px);
+  transform: translateX(17px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+//custom radio button
+.radio-item {
+  display: inline-block;
+  position: relative;
+  padding: 0 6px;
+  margin: 10px 0 0;
+}
+
+.radio-item input[type='radio'] {
+  display: none;
+}
+
+.radio-item label {
+  color: #666;
+  @include font(Roboto, normal, 0.7em, normal);
+}
+
+.radio-item label:before {
+  content: ' ';
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  margin: 0 5px 0 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 11px;
+  border: 2px solid $light-blue;
+  background-color: transparent;
+}
+
+.radio-item input[type='radio']:checked + label:after {
+  border-radius: 11px;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 7px;
+  left: 9px;
+  content: ' ';
+  display: block;
+  background: #2ea7a5;
+}
+
+.blue {
+  color: #2ea7a5 !important;
+}
+.black {
+  color: #666 !important;
+}

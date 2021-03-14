@@ -1,0 +1,39 @@
+<p-sidebar
+  [(visible)]="display"
+  position="right"
+  styleClass="sidebar"
+  [modal]="true"
+  [baseZIndex]="10000"
+>
+  <ng-container *ngIf="isNotification; else userProfile">
+    <app-profile-header></app-profile-header>
+    <app-notification></app-notification>
+  </ng-container>
+
+  <ng-template #userProfile>
+    <app-profile-header></app-profile-header>
+    <p-accordion
+      styleClass="profile"
+      activeIndex="active"
+      expandIcon="pi pi-fw pi-plus"
+      collapseIcon="pi pi-fw pi-minus"
+    >
+      <p-accordionTab
+        header="Profile settings"
+        class="p-mt-2 profile-setting"
+        id="profileSetting"
+      >
+        <app-profile-setting></app-profile-setting>
+      </p-accordionTab>
+      <p-accordionTab
+        header="Notifications Settings"
+        class="p-mt-2 notification"
+        id="notification"
+      >
+        <app-notification-setting></app-notification-setting>
+      </p-accordionTab>
+    </p-accordion>
+
+    <app-profile-footer></app-profile-footer>
+  </ng-template>
+</p-sidebar>

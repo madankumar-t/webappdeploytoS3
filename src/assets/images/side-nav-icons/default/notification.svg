@@ -1,0 +1,6 @@
+<svg id="Icon_Notification" data-name="Icon/Notification" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <rect id="Rectangle" width="30" height="30" fill="gray" opacity="0"/>
+  <g id="Default" transform="translate(6 9)">
+    <path id="Shape" d="M16.772,12H1.228A1.154,1.154,0,0,1,0,10.942V1.059A1.154,1.154,0,0,1,1.228,0H16.772A1.154,1.154,0,0,1,18,1.059v9.882A1.154,1.154,0,0,1,16.772,12ZM4.893,7.249a.663.663,0,0,1,.435.155.494.494,0,0,1,.179.366.489.489,0,0,1-.165.37l-3.248,2.8H15.906l-3.248-2.8a.488.488,0,0,1-.165-.37.494.494,0,0,1,.179-.366.685.685,0,0,1,.852-.013l3.248,2.8-.008-6.8L9.328,8.188a.694.694,0,0,1-.737,0L1.228,3.4v6.794l3.248-2.8A.666.666,0,0,1,4.893,7.249ZM1.228,1.059V2.075L8.971,7.1l7.8-5.03V1.059Z" transform="translate(0 0)" fill="#fff" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

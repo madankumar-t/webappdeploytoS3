@@ -1,0 +1,137 @@
+@import '../../../../styles/styles.scss';
+@mixin menuIcon($fontColor) {
+  color: $fontColor;
+  width: 18px;
+  height: 14px;
+}
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 2.6rem);
+  padding-top: 6px;
+  flex-grow: 1;
+  background-color: $sidenav-background;
+  position: relative;
+  &__icons {
+    height: 45px;
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    &:before,
+    :after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 0vh;
+      left: -2px;
+      background-color: $color-side-nav-menu;
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+      background-color: $color-side-nav-menu;
+      transition: height 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    &:hover:before {
+      height: 45px;
+      background-color: $color-side-nav-menu;
+      transition: height 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    &:hover:after {
+      background: transparent;
+      height: 45px;
+      transition: 0s;
+    }
+    &--icon {
+      cursor: pointer;
+      display: block;
+      height: 27px;
+      span.icon-home {
+        @include menuIcon($color-gray);
+      }
+
+      .icon-exposures {
+        @include menuIcon($color-gray);
+        &:hover {
+          @include menuIcon($color-side-nav-menu);
+        }
+      }
+    }
+
+    &--title {
+      display: block;
+      opacity: 0.5;
+      line-height: 1.6;
+      letter-spacing: -0.2px;
+      color: $header-color-primary;
+      @include font(Roboto, normal, 10px, normal);
+    }
+  }
+
+  &__icons span.icon-global {
+    color: #666;
+  }
+  &__icons:hover span.icon-global {
+    color: #2ea7a5;
+  }
+  &__icons.active-menu:after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 45px;
+    left: -2px;
+    background-color: $color-side-nav-menu;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.selected-title {
+  color: #2ea7a5;
+  opacity: 1;
+}
+.bottom-menu {
+  bottom: 16px;
+  position: absolute;
+  width: 100%;
+}
+.sidenav-icon {
+  display: flex;
+  direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  & .icon {
+    text-align: center;
+  }
+  &__support {
+    text-align: center;
+    margin-top: 10px;
+    &--title {
+      display: block;
+      opacity: 0.5;
+      line-height: 1.6;
+      letter-spacing: -0.2px;
+      color: $header-color-primary;
+      @include font(Roboto, normal, 10px, normal);
+    }
+  }
+  &__whatsnew {
+    & .fa-bullhorn {
+      text-align: center;
+      color: #808080;
+    }
+  }
+}
+
+:host ::ng-deep .p-overlaypanel-content li a {
+  padding: 9px 0px 7px 12px !important;
+}
+
+:host ::ng-deep .p-overlaypanel {
+  margin-top: 43px !important;
+  border-radius: 7px !important;
+}

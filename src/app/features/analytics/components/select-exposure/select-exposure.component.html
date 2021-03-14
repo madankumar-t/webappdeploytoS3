@@ -1,0 +1,33 @@
+<p-dialog
+  header=""
+  [(visible)]="showExposure"
+  [style]="{ width: '72vw', height: '78.47vh' }"
+  [baseZIndex]="10000"
+  [modal]="true"
+  [closeOnEscape]="true"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [closable]="true"
+  [resizable]="true"
+  [dismissableMask]="true"
+  (onHide)="onHide.emit($event)"
+  styleClass="event-d"
+  [transitionOptions]="'0ms'"
+>
+  <ng-template pTemplate="header">
+    <h5>Select exposure to analyse</h5>
+  </ng-template>
+  <s-workspace-browser
+    [checkBtn]="true"
+    [showSideBar]="showSideBar"
+    [showSearch]="true"
+    [workspaceListHeight]="'calc(100vh)'"
+    [ispopup]="true"
+    [minBufferPx]="180 * 5"
+    [maxBufferPx]="180 * 5 * 5"
+    [itemSize]="180 / 5"
+    [rows]="5"
+    [defaultTab]="defaultTab"
+  >
+  </s-workspace-browser>
+</p-dialog>

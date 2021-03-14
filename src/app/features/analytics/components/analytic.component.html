@@ -1,0 +1,23 @@
+<div class="container">
+  <s-panel-header
+    pageTitle="Analytics"
+    pageIcon="icon-active-analysis"
+  ></s-panel-header>
+  <s-action-cards
+    cardsMainTitle="What would you like to do today?"
+    [cardsContent]="cardsContent"
+    (buttonAction)="goTo()"
+  ></s-action-cards>
+  <div class="p-grid cards-wrapper">
+    <div class="p-col-4">
+      <recently-used-analysis-types></recently-used-analysis-types>
+    </div>
+    <div class="p-col-8">
+      <recently-viewed-analysis></recently-viewed-analysis>
+    </div>
+  </div>
+</div>
+<s-pop-up-dialog
+  (closeEvent)="showComingSoon = false"
+  [showComingSoon]="showComingSoon"
+></s-pop-up-dialog>

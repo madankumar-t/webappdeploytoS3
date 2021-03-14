@@ -1,0 +1,19 @@
+<svg id="empointer" xmlns="http://www.w3.org/2000/svg" width="17.8" height="51.1" viewBox="0 0 17.8 51.1">
+  <g id="Group_314" data-name="Group 314" transform="translate(-103 -373)">
+    <g id="Group_312" data-name="Group 312" transform="translate(111.444 385)">
+      <path id="Path_251" data-name="Path 251" d="M0,0V39.1" fill="none" stroke="#6f6e8e" stroke-width="1"/>
+    </g>
+    <g id="Group_313" data-name="Group 313" transform="translate(103 373)">
+      <circle id="Ellipse_11" data-name="Ellipse 11" cx="8.9" cy="8.9" r="8.9" transform="translate(0 0)" fill="#8b4c1e"/>
+      <circle id="Ellipse_12" data-name="Ellipse 12" cx="7.9" cy="7.9" r="7.9" transform="translate(1 1)" fill="none" stroke="#e09e6d" stroke-width="2"/>
+    </g>
+  </g>
+  <g id="Group_315" data-name="Group 315" transform="translate(-168.901 -419.97)">
+    <path id="Path_252" data-name="Path 252" d="M180.7,433h-6.9v-8.3a1.949,1.949,0,0,1,.8.1h.1a1.612,1.612,0,0,1,.7.4v.1a4.869,4.869,0,0,0,.1,1.2,3.083,3.083,0,0,0,.1,1c.1.1.1.3.2.4s.1.2.2.3v.7a3.915,3.915,0,0,0,1,.8,1.421,1.421,0,0,0,.6.2c.1,0,.1,0,.2.1.2.1.5.3.7.4a.1.1,0,0,1,.1.1c.1.2.3.4.4.6.1.1.1.3.2.4,0,.1.1.1.2.2.1.2.2.3.3.5,0,.1.1.1.1.2l.4.4a.587.587,0,0,1,.5.2Z" fill="#fff"/>
+    <path id="Path_253" data-name="Path 253" d="M180.5,431c-.1-.2-.3-.3-.5-.5l-.3-.3a.367.367,0,0,1-.1-.3,4.875,4.875,0,0,1,.4-1.1l.2-.2h.1a.6.6,0,0,0,.4-.1.481.481,0,0,1,.6.2,2.186,2.186,0,0,1,.3.5c.1.2.1.4.2.6v.1a1.612,1.612,0,0,1-.4.7l-.1.1A1.33,1.33,0,0,1,180.5,431Z" fill="#fff"/>
+    <path id="Path_254" data-name="Path 254" d="M177.8,427.6c0-.2.1-.5.1-.7,0-.1,0-.1.1-.2l.1-.1h0c.1-.1.2,0,.4.1a.1.1,0,0,1,.1.1.31.31,0,0,0,.2.1c.1,0,.2.1.3.2a.3.3,0,0,1,0,.4c0,.1-.1.2-.1.3s-.1.1-.1.2l-.1.1-.2.2c-.1.1-.2.1-.4.1h-.1l-.3-.3a.367.367,0,0,1-.1-.3c.2-.1.2-.1.1-.2Z" fill="#fff"/>
+    <path id="Path_255" data-name="Path 255" d="M176.4,426.9v-.4a.367.367,0,0,1,.1-.3.749.749,0,0,1,.5-.1.215.215,0,0,1,.2.2v.2l-.2.2h0c-.2.1-.4.1-.6.2Z" fill="#fff"/>
+    <path id="Path_256" data-name="Path 256" d="M179.4,428.7c.1.2.1.4.2.6-.1.1-.3.1-.4.2h-.1c-.1,0-.2-.1-.3-.2v-.5h0C179,428.8,179.2,428.7,179.4,428.7Z" fill="#fff"/>
+    <path id="Path_257" data-name="Path 257" d="M177,428.2l-.4-.4c-.1-.1-.1-.2,0-.2l.2-.2h0c.1.1.3.1.4.2a1.381,1.381,0,0,1,.3.4v.1A.9.9,0,0,0,177,428.2Z" fill="#fff"/>
+  </g>
+</svg>

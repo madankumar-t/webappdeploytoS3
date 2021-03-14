@@ -1,0 +1,47 @@
+<div class="scrollbar">
+  <p-table
+    [columns]="cols"
+    [value]="samples"
+    styleClass="p-datatable-sm"
+    [resizableColumns]="true"
+  >
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th>#</th>
+        <th *ngFor="let col of columns">
+          {{ col.header }}
+        </th>
+      </tr>
+      <ng-container *ngIf="!samples.length">
+        <ng-container *ngFor="let items of rowArray">
+          <tr>
+            <td><p-skeleton></p-skeleton></td>
+            <td><p-skeleton></p-skeleton></td>
+            <td><p-skeleton></p-skeleton></td>
+            <td><p-skeleton></p-skeleton></td>
+            <td><p-skeleton></p-skeleton></td>
+            <td><p-skeleton></p-skeleton></td>
+          </tr>
+        </ng-container>
+      </ng-container>
+    </ng-template>
+    <ng-template
+      pTemplate="body"
+      let-rowData
+      let-columns="columns"
+      let-i="rowIndex"
+    >
+      <tr>
+        <td>{{ i + 1 }}</td>
+        <td *ngFor="let col of columns">
+          <ng-container *ngIf="col.field === 'Name'">
+            <a [href]="rowData.FileName">{{ rowData[col.field] }}</a>
+          </ng-container>
+          <ng-container *ngIf="col.field != 'Name'">
+            {{ rowData[col.field] }}
+          </ng-container>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

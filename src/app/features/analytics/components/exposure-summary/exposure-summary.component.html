@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="es-container">
+    <div class="es-container__header">
+      <header-panel></header-panel>
+    </div>
+    <div class="es-container__map">
+      <map></map>
+    </div>
+    <div class="es-container__md-col">
+      <div class="es-container__md-col__summary">
+        <summary></summary>
+      </div>
+      <div class="es-container__md-col__top-assets">
+        <top-assets></top-assets>
+      </div>
+      <div class="es-container__md-col__contribution">
+        <contribution></contribution>
+      </div>
+    </div>
+    <div class="es-container__settings-panel">
+      <settings-panel></settings-panel>
+    </div>
+  </div>
+</div>
+<new-analysis
+  [visible]="visible"
+  (onHide)="visible = false"
+  (onLaunch)="selectExposure()"
+></new-analysis>
+<select-exposure
+  [showExposure]="showExposure"
+  (onHide)="showExposure = false"
+></select-exposure>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.8" height="51.1" viewBox="0 0 17.8 51.1">
+  <g id="tspointer" transform="translate(-1.5 -0.5)">
+    <g id="Group_334" data-name="Group 334" transform="translate(111.444 385)">
+      <path id="Path_299" data-name="Path 299" d="M-101.5-372.5v39.1" fill="none" stroke="#6f6e8e" stroke-width="1"/>
+    </g>
+    <g id="Group_336" data-name="Group 336" transform="translate(101.5 372.5)">
+      <g id="Group_335" data-name="Group 335" transform="translate(1.5 0.5)">
+        <path id="Path_300" data-name="Path 300" d="M-92.6-355.7a7.917,7.917,0,0,1-7.9-7.9,7.853,7.853,0,0,1,7.9-7.9,7.853,7.853,0,0,1,7.9,7.9A7.917,7.917,0,0,1-92.6-355.7Z" fill="#32b2ce"/>
+        <path id="Path_301" data-name="Path 301" d="M-92.6-370.5a6.914,6.914,0,0,0-6.9,6.9,6.914,6.914,0,0,0,6.9,6.9,6.914,6.914,0,0,0,6.9-6.9,6.914,6.914,0,0,0-6.9-6.9m0-2a8.92,8.92,0,0,1,8.9,8.9,8.92,8.92,0,0,1-8.9,8.9,8.92,8.92,0,0,1-8.9-8.9A8.92,8.92,0,0,1-92.6-372.5Z" fill="#41d4f4"/>
+      </g>
+    </g>
+    <path id="Path_302" data-name="Path 302" d="M10,15.1V10.7H7.9l3-6.9V8.2h2Z" fill="#fff"/>
+  </g>
+</svg>

@@ -1,0 +1,140 @@
+@import '../../../../styles/styles.scss';
+
+:host ::ng-deep .p-virtualscroller-content{
+    background: #fafafa;
+}
+
+.card-item {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;   
+    padding: 8px;
+    border-radius: 8px; 
+    background-color: #ffffff;
+    border: solid 0.5px #ffffff;
+    &:hover{
+        box-shadow: 0 10px 30px 0 rgba(34, 34, 34, 0.1);
+        border: solid 0.5px #2aa8a9;
+    }
+}
+
+.bitmap {
+    background-color: #ededed;
+    border-radius: 4px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    & img{
+        width: 100%;
+    }
+}
+
+.head-icon {
+    width: 10px;
+    height: 10px;
+    background-color: #e5e5e5;
+    margin: 0.5rem 0.9rem 0;
+}
+
+.content {
+    margin-left: 10px;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    & .checkbox {
+        padding: 0;
+        text-align: center;
+    }
+    & .heading {
+        @include font(Roboto, normal, 11px, normal);
+        padding: 0.5rem 0.5rem 0 0.5rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.45;
+        letter-spacing: normal;
+        text-align: left;
+        color: #222222;
+        white-space: nowrap;
+        width: 151px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    & .details {
+        margin: 0;
+        @include font(Roboto, normal, 11px, normal); 
+        line-height: 1.45;
+        letter-spacing: normal;
+        text-align: left;
+        color: #666666;
+        width: 151px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    & .actions {
+        @include font($font-family-roboto, normal, 10px, bold); 
+        margin: 20px 9px 0 0;
+        .right-border {
+            border-left: 1px solid #222222;
+        }
+        .no-pad {
+            padding: 0px;
+            &.item-center {
+                text-align: center;
+                .ml-4 {
+                    margin-left: 4px;
+                }
+                & .btn-icon {
+                    padding: 4px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                }
+            }
+            & i {
+                font-size: 9px;
+                margin-top:4px;
+            }
+        }
+        
+    }
+}
+
+.loading-item {
+    .image-container {
+        width: 100px;
+        height: 66px;
+        animation: pulse 1s infinite ease-in-out;
+        margin-right: 1rem;
+    }
+
+    .product-list-detail {
+        h5, .product-category {
+            width: 150px;
+            height: 14px;
+            display: block;
+            animation: pulse 1s infinite ease-in-out;
+        }
+    }
+    .product-list-action {
+        .product-badge {
+            display: block;
+            width: 100px;
+            height: 14px;
+            animation: pulse 1s infinite ease-in-out;
+        }
+
+        h6 {
+            width: 25px;
+            height: 14px;
+            animation: pulse 1s infinite ease-in-out;
+        }
+    }
+}

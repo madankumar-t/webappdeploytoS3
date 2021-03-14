@@ -1,0 +1,65 @@
+@import '../../../../../styles/styles.scss';
+@mixin exposureSummaryPageChildComp() {
+  background-color: $background-color-primary;
+  border-radius: 8px;
+  margin-top: 1rem;
+  margin-left: 16px;
+}
+.container {
+  margin: 0;
+  height: 100%;
+  background-color: $background-color-secondary;
+  border-top-left-radius: 10px;
+  .es-container {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    width: 100%;
+    padding: 0 0 1rem 1rem;
+    // height: calc(100vh - 80px);
+    &__header {
+      @include exposureSummaryPageChildComp();
+      width: 100vw;
+      height: calc(100vh - 94vh);
+      margin-top: 0;
+      margin-left: -1rem;
+      border-radius: 8px 0 0 0;
+      box-shadow: 0 0 12px 0 rgba(153, 153, 153, 0.25);
+    }
+    &__map {
+      @include exposureSummaryPageChildComp();
+      width: calc(40% - 16px);
+      margin-left: 0;
+      padding: 0.5rem 1rem 1.5rem;
+    }
+    &__md-col {
+      display: flex;
+      flex-flow: column;
+      width: 40%;
+      &__summary {
+        @include exposureSummaryPageChildComp();
+        height: calc(17vh - 4px);
+        overflow: hidden;
+        padding: 0.5rem 1rem 1.5rem;
+      }
+      &__top-assets {
+        @include exposureSummaryPageChildComp();
+        height: 38vh;
+        overflow: hidden;
+        padding: 0.5rem 1rem 1.5rem;
+      }
+      &__contribution {
+        @include exposureSummaryPageChildComp();
+        height: 25vh;
+        overflow: hidden;
+        padding: 0.5rem 1rem 1.5rem;
+      }
+    }
+    &__settings-panel {
+      @include exposureSummaryPageChildComp();
+      width: calc(20% - 1px);
+      overflow: hidden;
+      border-radius: 8px 0 0 8px;
+    }
+  }
+}

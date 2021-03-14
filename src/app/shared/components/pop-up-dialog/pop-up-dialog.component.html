@@ -1,0 +1,22 @@
+<p-dialog
+  header=""
+  [(visible)]="showComingSoon"
+  [modal]="true"
+  [closeOnEscape]="true"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [closable]="false"
+  [resizable]="true"
+  styleClass="event-d"
+  [transitionOptions]="'0ms'"
+>
+  <div class="p-grid event-d__content commingsoon_popup">
+    <div class="p-col-12 event-d__content--desc">Coming Soon</div>
+    <p-button
+      icon=""
+      (click)="closeEvent.emit()"
+      label="OK"
+      styleClass="p-button-text"
+    ></p-button>
+  </div>
+</p-dialog>

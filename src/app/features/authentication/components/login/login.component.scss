@@ -1,0 +1,66 @@
+@import '../../../../../styles/styles';
+
+.login {
+  height: 50vh;
+  width: 90%;
+  &__header {
+    @include font(Roboto, normal, 32px, 500);
+    color: #fff;
+  }
+  &__form {
+    &__fields {
+      &--label {
+        background-color: #fff;
+        height: 37px;
+        margin-bottom: -1px;
+        color: #43425d;
+        padding-left: 9px;
+        padding-top: 10px;
+        display: block;
+      }
+      input {
+        font-size: 16px;
+        height: 37px;
+        border: none;
+        padding-left: 9px;
+        padding-top: 0;
+        color: #2aa6a6;
+        width: 100%;
+        outline-color: white;
+        outline-style: none;
+      }
+      &--btn {
+        width: 100%;
+        border-radius: 2px;
+        font-size: 18px;
+        height: 50px;
+        border: none;
+        color: #fff;
+        background-color: #2aa6a6;
+      }
+    }
+    &__links {
+      @include flexFlow(row, space-between, center);
+      span {
+        cursor: pointer;
+        color: #2aa6a6;
+        text-decoration: underline;
+      }
+    }
+  }
+  &__error {
+    padding-top: 5px;
+    color: $color-red-error;
+  }
+}
+
+.user {
+  background-color: white;
+  height: 100vh;
+  margin: 0;
+  background-size: cover;
+  background-image: url('../../../../../assets/images/login-background.svg');
+  &__login {
+    margin: auto;
+  }
+}

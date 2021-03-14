@@ -1,0 +1,32 @@
+<div class="mo">
+  <div class="p-grid sticked-items manageObject">
+    <div class="p-col-6 mainheader" *ngFor="let object of objectDescription">
+      <p-card styleClass="module-item">
+        <ng-template pTemplate="header">
+          <i class="pi icon-exposures"></i> {{ object.title }}
+        </ng-template>
+        <p
+          [pTooltip]="object.description"
+          placeholder="Top"
+          tooltipPosition="top"
+        >
+          {{ object.description }}
+        </p>
+        <p-button
+          label="Explore"
+          [routerLink]="object.exploreLink"
+          styleClass="btn-action"
+          iconPos="right"
+          class="p-col-10"
+        ></p-button>
+        <p-button
+          label="New"
+          [routerLink]="object.newLink"
+          styleClass="btn-action otherBtn"
+          iconPos="right"
+          class="p-col-10"
+        ></p-button>
+      </p-card>
+    </div>
+  </div>
+</div>

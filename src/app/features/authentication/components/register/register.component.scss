@@ -1,0 +1,32 @@
+@import '../../../../../styles/settings/variables';
+
+.register {
+  height: 75vh;
+  margin: auto;
+
+  &--flexrow {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &--flexcol {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    color: $header-color-primary;
+    font-size: $font-size-lg;
+  }
+
+  &__label {
+    background-color: $background-color-primary;
+  }
+
+  &__input {
+    border: none;
+    &-group {
+      width: 50%;
+    }
+  }
+}

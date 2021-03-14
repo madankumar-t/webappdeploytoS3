@@ -1,0 +1,141 @@
+$primary-color: #2ea7a5;
+
+/**
+* SCROLL BAR COLORS
+*/
+$scrollbar-color: #adadad;
+$scrollbar-track-color: #ebebeb;
+$scrollbar-thumb-color: rgba(00, 00, 00, 0.16);
+$scrollbar-thumb-hover-color: #555;
+
+$profile-background-color: #fafafa;
+$disable-background-color: #fafafa;
+$disable-color: #f0f0f0;
+/**
+ * BUTTON COLORS
+ */
+$search-button: #2ea7a5;
+$primary-color: #2ea7a5;
+
+/**
+ * BACKGROUND COLORS
+ */
+$body-background: rgb(109, 95, 95);
+$header-background: #101010;
+$sidenav-background: #101010;
+$background-blend-mode: darken;
+$container-background: #edf4f4;
+$background-color-primary: #ffffff;
+$background-color-secondary: #f4f4f4;
+$bitmap-background-color: #ededed;
+
+$cobrand-logo-backgournd-color: #484848;
+$header-line-color: #e5e5e5;
+
+$error-background-color: #fff8f8;
+$sucess-background-color: #eafff8;
+
+$menu-item-background-color: #e8f4f4;
+$menu-item-text-color: #495057;
+/**
+ * COLORS
+ */
+$color-default-font: #222235;
+$color-red-error: red;
+$color-red-bg: rgba(red, 0.5);
+$header-color-primary: #fff;
+$color-gray: #808080;
+$header-line-color: #d8d8d8;
+$color-black: #000000;
+$color-date-font: #666666;
+$color-side-nav-menu: #2ea7a5;
+$light-black: #222222;
+$light-blue: #2ea7a5;
+$color-light: #e9e9e9;
+$color-dark: #454545;
+$dark-gray: #454545;
+$gredient-end-color: #e0ffff;
+$gredient-start-color: rgba(246, 255, 252, 0.36);
+
+$card-header-bg-color: #f1edf7;
+$card-header-color: #1f1f1f;
+
+$button-icon-color: #ff9457;
+
+// ...your custom colors
+
+/**
+ * SPACING: MARGINS & PADDING
+ */
+$space-xs: 3px;
+$space-sm: 5px;
+$space-md: 10px;
+$space-lg: 15px;
+$space-xl: 15px;
+/**
+* FONTS weight , style , size ...
+*/
+$font-family-primary: Roboto;
+$font-family-secondary: 'Open Sans';
+
+$font-family-roboto: Roboto;
+$font-family-opensans: OpenSans;
+$font-weight-bold: 600;
+$font-weight-normal: normal;
+$font-weight-bolder: bolder;
+$font-weight-lighter: lighter;
+$font-stretch: normal;
+$font-style-normal: normal;
+$font-style-italic: italic;
+
+$font-size-xs: 0.5rem;
+$font-size-sm: 0.6rem;
+$font-size-md: 0.75rem;
+$font-size-default: 1rem;
+$font-size-lg: 32px;
+$font-size-xl: 1.4rem;
+$font-color-primary: #ffffff;
+$home-page-font-size-lg: 13px;
+$home-page-font-size-md: 11px;
+$home-page-font-size-sm: 13px;
+/**
+ * Z-INDEXES & LAYERS
+ */
+$z-index-bottom: -1;
+$z-index-default: 0;
+$z-index-top: 1;
+$z-index-dropdown: 10;
+$z-index-menu: 1000;
+$z-index-overlay: 1100;
+$z-index-dialog: 1200;
+$z-index-notification: 1300;
+
+/**
+ * TRANSITIONS & EFFECTS
+ */
+$transition-effect-default: 0.3s ease;
+$transition-bezier: 0.3s cubic-bezier(0, 0, 0.2, 1);
+
+$homepage-border-color: #dddddd;
+$container-border-color: #bbbbbb;
+
+/**
+* flex variable
+*/
+$direction-row: row;
+$direction-col: column;
+$justify-center: center;
+$justify-end: flex-end;
+$justify-center: flex-start;
+$justify-space-between: space-between;
+$justify-space-around: space-around;
+
+// PADDING
+
+$padding-xs: 2px;
+$padding-sm: 4px;
+$padding-md: 8px;
+$padding-lg: 16px;
+$padding-xl: 24px;
+$topnav-height: 2.6rem;
+$inner-container-height: calc(100vh - 2.6rem);

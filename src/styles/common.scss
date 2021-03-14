@@ -1,0 +1,11 @@
+.user {
+  background-color: white;
+  height: 100vh;
+  margin: 0;
+  background-size: cover;
+  background-image: url('../assets/images//login-background.svg');
+
+  &__login {
+    margin: auto;
+  }
+}

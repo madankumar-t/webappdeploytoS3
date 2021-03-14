@@ -1,0 +1,256 @@
+// style for left bottom arrow
+::ng-deep .left-bottom.p-overlaypanel:after,
+::ng-deep .left-bottom.p-overlaypanel:before {
+  left: -4% !important;
+}
+
+::ng-deep .left-bottom.p-overlaypanel.p-overlaypanel-flipped:before {
+  transform: rotate(90deg);
+}
+
+::ng-deep .left-bottom.p-overlaypanel.p-overlaypanel-flipped:after {
+  transform: rotate(90deg);
+}
+
+::ng-deep .left-bottom.p-overlaypanel-flipped:after,
+::ng-deep .left-bottom.p-overlaypanel-flipped:before {
+  top: 71% !important;
+}
+
+// style for left top arrow
+::ng-deep .left-top.p-overlaypanel:after,
+::ng-deep .left-top.p-overlaypanel:before {
+  left: 11% !important;
+  top: -8%;
+}
+
+::ng-deep .left-top.p-overlaypanel.p-overlaypanel-flipped:before {
+  transform: rotate(90deg);
+}
+
+::ng-deep .left-top.p-overlaypanel.p-overlaypanel-flipped:after {
+  transform: rotate(90deg);
+}
+
+::ng-deep .left-top.p-overlaypanel-flipped:after,
+::ng-deep .left-top.p-overlaypanel-flipped:before {
+  top: 11% !important;
+}
+
+// style for top left arrow
+::ng-deep .top-left.p-overlaypanel-flipped:after,
+::ng-deep .top-left.p-overlaypanel-flipped:before {
+  top: -13% !important;
+}
+
+::ng-deep .top-left.p-overlaypanel.p-overlaypanel-flipped:after {
+  transform: rotate(180deg);
+}
+
+::ng-deep .top-left.p-overlaypanel.p-overlaypanel-flipped:before {
+  transform: rotate(180deg);
+}
+
+::ng-deep .top-left.p-overlaypanel:after,
+::ng-deep .top-left.p-overlaypanel:before {
+  left: 8% !important;
+}
+
+// style for top right arrow
+::ng-deep .top-right.p-overlaypanel-flipped:after,
+::ng-deep .top-right.p-overlaypanel-flipped:before {
+  top: -13% !important;
+}
+
+::ng-deep .top-right.p-overlaypanel.p-overlaypanel-flipped:after {
+  transform: rotate(180deg);
+}
+
+::ng-deep .top-right.p-overlaypanel.p-overlaypanel-flipped:before {
+  transform: rotate(180deg);
+}
+
+::ng-deep .top-right.p-overlaypanel:after,
+::ng-deep .top-right.p-overlaypanel:before {
+  left: 91% !important;
+}
+
+// style for bottom left arrow
+::ng-deep .bottom-left .p-overlaypanel-flipped:after,
+::ng-deep .bottom-left.p-overlaypanel-flipped:before {
+  top: 98% !important;
+}
+
+::ng-deep .bottom-left.p-overlaypanel.p-overlaypanel-flipped:after {
+  transform: rotate(360deg);
+}
+
+::ng-deep .bottom-left.p-overlaypanel.p-overlaypanel-flipped:before {
+  transform: rotate(360deg);
+}
+
+::ng-deep .bottom-left.p-overlaypanel:after,
+::ng-deep .bottom-left.p-overlaypanel:before {
+  left: 8% !important;
+}
+
+// style for bottom right arrow
+::ng-deep .bottom-right .p-overlaypanel-flipped:after,
+::ng-deep .bottom-right.p-overlaypanel-flipped:before {
+  top: 98% !important;
+}
+
+::ng-deep .bottom-right.p-overlaypanel.p-overlaypanel-flipped:after {
+  transform: rotate(360deg);
+}
+
+::ng-deep .bottom-right.p-overlaypanel.p-overlaypanel-flipped:before {
+  transform: rotate(360deg);
+}
+
+::ng-deep .bottom-right.p-overlaypanel:after,
+::ng-deep .bottom-right.p-overlaypanel:before {
+  left: 88% !important;
+}
+
+// style for right top arrow
+::ng-deep .right-top .p-overlaypanel-flipped:after,
+::ng-deep .right-top.p-overlaypanel-flipped:before {
+  top: 10% !important;
+}
+
+::ng-deep .right-top.p-overlaypanel.p-overlaypanel-flipped:after {
+  transform: rotate(-93deg);
+}
+
+::ng-deep .right-top.p-overlaypanel.p-overlaypanel-flipped:before {
+  transform: rotate(-93deg);
+}
+
+::ng-deep .right-top.p-overlaypanel:after,
+::ng-deep .right-top.p-overlaypanel:before {
+  left: 104% !important;
+  top: 12%;
+}
+
+// style for right bottom arrow
+::ng-deep .right-bottom .p-overlaypanel-flipped:after,
+::ng-deep .right-bottom.p-overlaypanel-flipped:before {
+  top: 66% !important;
+}
+
+::ng-deep .right-bottom.p-overlaypanel.p-overlaypanel-flipped:after {
+  transform: rotate(-93deg);
+}
+
+::ng-deep .right-bottom.p-overlaypanel.p-overlaypanel-flipped:before {
+  transform: rotate(-93deg);
+}
+
+::ng-deep .right-bottom.p-overlaypanel:after,
+::ng-deep .right-bottom.p-overlaypanel:before {
+  left: 104% !important;
+  top: 68%;
+}
+
+:host ::ng-deep .list-box {
+  font-size: 13px;
+}
+
+:host ::ng-deep .contextMenu {
+  & .p-contextmenu,
+  .p-tieredmenu {
+    font-family: Roboto !important;
+    font-size: 11px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.45;
+    letter-spacing: normal;
+    text-align: left;
+    color: #222222;
+    width: 8.5rem;
+    & .p-menuitem-link:focus,
+    .p-menuitem-link:hover {
+      background-color: #e8f4f4;
+      font-weight: 500;
+      .p-menuitem-text {
+        color: #2ea7a5;
+      }
+    }
+  }
+  & .p-tieredmenu {
+    margin-top: 9px;
+    margin-left: -6%;
+  }
+  .p-tieredmenu:before {
+    border-width: 10px;
+  }
+  .p-tieredmenu:before {
+    content: '';
+    position: absolute;
+    right: 22px;
+    top: -9px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 9px 9px 9px;
+    border-color: transparent transparent #fff transparent;
+    z-index: 10;
+  }
+}
+
+::ng-deep .p-tieredmenu {
+  width: 137px;
+  border: 0px;
+}
+
+:host ::ng-deep .p-overlaypanel-flipped {
+  margin-bottom: 10px;
+  margin-top: 3%;
+  margin-left: 5%;
+  width: 10vw;
+  border-radius: 9px;
+}
+
+:host ::ng-deep .p-overlaypanel-content li {
+  height: 28px;
+  width: 100%;
+  display: flex;
+}
+
+:host ::ng-deep .p-tieredmenu .p-menuitem-link .p-menuitem-text {
+  color: #495057;
+  font-size: 11px;
+}
+
+:host ::ng-deep .p-overlaypanel {
+  margin-top: 15px;
+  border-radius: 7px;
+}
+
+:host ::ng-deep .p-tieredmenu {
+  border-radius: 7px;
+}
+
+.p-menuitem-text:hover {
+  color: #2ea7a5;
+  border: 0px;
+}
+
+:host ::ng-deep .p-tieredmenu .p-menuitem-link:hover .p-menuitem-text {
+  color: #2ea7a5;
+}
+
+:host ::ng-deep .p-tieredmenu .p-menuitem-link:hover .p-menuitem-icon:before {
+  color: #2ea7a5;
+}
+
+:host ::ng-deep .p-tieredmenu .p-menuitem-link {
+  width: 100%;
+  display: flex;
+}
+
+:host ::ng-deep .p-tieredmenu .p-menuitem-link:focus {
+  box-shadow: none;
+}

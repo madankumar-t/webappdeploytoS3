@@ -1,0 +1,51 @@
+/**
+ * Global Mixins, i.e. box-shadow
+ */
+@mixin customScrollbar($classname) {
+  #{$classname}::-webkit-scrollbar {
+    width: 3px;
+    border-radius: 1.5px;
+    background-color: $scrollbar-color;
+  }
+  #{$classname}:hover::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  #{$classname}::-webkit-scrollbar-track {
+    width: 3px;
+    border-radius: 1.5px;
+    background-color: $scrollbar-track-color;
+  }
+
+  #{$classname}::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb-color;
+    border-radius: 6px;
+    width: 4px;
+  }
+
+  #{$classname}::-webkit-scrollbar-thumb:hover {
+    background: $scrollbar-thumb-hover-color;
+    width: 4px;
+  }
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexFlow($direction, $justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin font($fontFamily, $fontStyle, $fontSize, $fontWeight) {
+  font-family: $fontFamily;
+  font-style: $fontStyle;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}

@@ -1,0 +1,134 @@
+<div class="container">
+  <div class="import-container">
+    <div class="import-container__box">
+      <div class="import-container__upload" *ngIf="uploadStatus === 'upload'">
+        <div class="import-container__upload--container">
+          <p-progressBar
+            [value]="progress"
+            [showValue]="false"
+            *ngIf="hasFiles()"
+          ></p-progressBar>
+          <div class="drag-content-icon">
+            <img src="assets\images\icons\files.png" class="icon-file" />
+          </div>
+          <div class="drag-content-primary-label">
+            {{ percentage }}
+          </div>
+          <div class="drag-content-secondary-label">{{ message }}</div>
+        </div>
+        <div class="import-container__upload--action" (click)="clearFile()">
+          <i class="pi pi-times"></i><span> Cancel</span>
+        </div>
+      </div>
+      <div class="import-container__upload" *ngIf="uploadStatus === 'failed'">
+        <div class="import-container__upload--container error-container">
+          <div class="drag-content-icon">
+            <img src="assets\images\icons\cross-error.svg" class="icon-file" />
+          </div>
+          <div class="drag-content-primary-label">Upload Failed</div>
+          <div class="drag-content-secondary-label">
+            {{ errorMsg }}
+          </div>
+        </div>
+        <div class="import-container__upload--action">
+          <div class="p-fileupload-buttonbar error">
+            <button
+              pButton
+              type="button"
+              label="Try again"
+              class="p-button-outlined btn-action"
+              (click)="clearFile()"
+            ></button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="import-container__upload"
+        *ngIf="uploadStatus === 'limit_exceeded'"
+      >
+        <div class="import-container__upload--container error-container">
+          <div class="drag-content-icon">
+            <img src="assets\images\icons\cross-error.svg" class="icon-file" />
+          </div>
+          <div class="drag-content-primary-label">Limit Reached</div>
+          <div class="drag-content-secondary-label">
+            {{ errorMsg }}
+          </div>
+        </div>
+      </div>
+      <div
+        class="import-container__upload"
+        *ngIf="uploadStatus === 'upload-sucess'"
+      >
+        <div class="import-container__upload--container sucess-container">
+          <div class="drag-content-icon">
+            <img src="assets\images\icons\tick-sucess.svg" class="icon-file" />
+          </div>
+          <div class="drag-content-primary-label">File uploaded</div>
+          <div class="drag-content-secondary-label">
+            {{ fileName }}
+          </div>
+        </div>
+        <div class="import-container__upload--action">
+          <div class="p-fileupload-buttonbar"></div>
+        </div>
+      </div>
+      <ng-container *ngIf="['none', 'file-selected'].includes(uploadStatus)">
+        <p-fileUpload
+          name="files"
+          [multiple]="false"
+          #fileUpload
+          accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+          [showUploadButton]="true"
+          [customUpload]="true"
+          [showCancelButton]="true"
+          [chooseIcon]="''"
+          [cancelIcon]="''"
+          [uploadIcon]="''"
+          [chooseLabel]="'Choose File'"
+          [cancelLabel]="'Choose another file'"
+          [uploadLabel]="'Proceed to upload'"
+          [maxFileSize]="700 * 1024 * 1024"
+          (uploadHandler)="upload($event, fileUpload)"
+          (onSelect)="fileSelected($event, fileUpload)"
+          (onClear)="clearFile()"
+          [styleClass]="
+            uploadStatus === 'none'
+              ? 'notChoosed'
+              : uploadStatus == 'file-selected'
+              ? 'fileChoosed'
+              : ''
+          "
+        >
+          <ng-template pTemplate="content" let-files>
+            <ng-container *ngIf="uploadStatus === 'none'">
+              <div class="drag-content-icon">
+                <i class="icon-Icon_12_chkbox_on-Copy"></i>
+              </div>
+              <div class="drag-content-primary-label">Drop files here</div>
+              <div class="drag-content-secondary-label">
+                Support formats: Excel, csv, etf & eetf
+              </div>
+            </ng-container>
+          </ng-template>
+          <ng-template let-file pTemplate="file">
+            <ng-container *ngIf="uploadStatus == 'file-selected'">
+              <div class="drag-content-icon">
+                <img src="assets\images\icons\files.png" class="icon-file" />
+              </div>
+              <div class="drag-content-primary-label">
+                Exposure name
+                <input
+                  type="text"
+                  class="filename"
+                  pInputText
+                  [(ngModel)]="fileName"
+                />
+              </div>
+            </ng-container>
+          </ng-template>
+        </p-fileUpload>
+      </ng-container>
+    </div>
+  </div>
+</div>

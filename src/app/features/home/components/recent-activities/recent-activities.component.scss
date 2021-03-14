@@ -1,0 +1,57 @@
+@import '../../../../../styles/styles.scss';
+@include customScrollbar('.activity');
+.event-heading {
+    width: 90%;
+    height: 44px;
+    @include font($font-family-roboto, $font-style-normal, 12px, $font-weight-bold);
+    margin: 0 auto;
+    line-height: 1.54;
+    color: #000000;
+    border-bottom: solid 1px #e5e5e5;
+    padding-top: 16px;
+}
+.activity {
+    height: 24vh;
+    overflow: auto;
+    width: 100%;
+    &__para {
+        width: 90%;
+        margin: 0 auto;
+        &--date {
+            line-height: 1.45;
+            @include font($font-family-roboto, $font-style-normal, 11px, $font-weight-bold);
+            display: inline-block;
+            color: #222222;
+            margin-bottom: 6px
+        }
+        &__wrapper {
+            line-height: 1.45;
+            justify-content: left !important;
+            @include font($font-family-roboto, $font-style-normal, 11px, $font-weight-normal);
+            @include flexFlow( row, center, flex-start);
+            color: #666666;;
+            &--icon {
+                background-color: #edf4f4;
+                padding-top: 2px;
+                padding-right: 6px;
+                padding-left: 2px;
+            }
+            &--desc {
+                margin-top: 2px;
+                margin-bottom: 0.2em;
+                a {
+                    text-decoration: none;
+                    font-weight: 500;
+                    color: #2fa5a5;
+                    cursor: pointer;
+                }
+            }
+        }
+        &--content {
+            font-family: $font-family-roboto;
+            font-size: 11px;
+            line-height: 1.45;
+            color: #666666;
+        }
+    }
+}

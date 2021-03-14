@@ -1,0 +1,75 @@
+<hr class="line" />
+
+<div class="p-grid p-pt-2">
+  <div class="p-col-1 p-pr-3">
+    <div class="profile__image">
+      <i class="fa fa-user-o" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="p-col-5 p-pl-3">
+    <div class="profile__user">
+      <span class="profile__user__name">{{ userName }}</span>
+      <span class="profile__user__mail">{{ userMail }}</span>
+    </div>
+  </div>
+  <div class="p-col-5"></div>
+</div>
+<form [formGroup]="profileForm" class="profile-form">
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col">
+      <label for="firstname1">First name</label>
+      <input
+        id="firstname1"
+        type="text"
+        class=""
+        pInputText
+        [value]="firstName"
+      />
+    </div>
+    <div class="p-field p-col">
+      <label for="lastName">Last name</label>
+      <input
+        id="last-name"
+        type="text"
+        class=""
+        pInputText
+        [value]="lastName"
+      />
+    </div>
+  </div>
+
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col">
+      <label for="mobile">Your Mobile Number</label>
+      <input
+        id="mobile"
+        type="text"
+        pInputText
+        [value]="mobile"
+        formControlName="mobile"
+      />
+    </div>
+    <div class="p-field p-col"></div>
+  </div>
+  <div class="p-grid p-mt-4">
+    <div class="p-col-3">
+      <button
+        pButton
+        (click)="cancel()"
+        label="Discard"
+        class="p-button-outlined"
+      ></button>
+    </div>
+    <div class="p-col-3 save-button">
+      <button
+        pButton
+        styleClass="save-button"
+        pRipple
+        label="Save Changes"
+        (click)="save()"
+      ></button>
+    </div>
+    <div class="p-col-6"></div>
+  </div>
+</form>
+<p-toast></p-toast>

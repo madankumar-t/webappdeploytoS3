@@ -1,0 +1,33 @@
+@import '../../../../styles/styles.scss';
+
+#triggeredMap {
+  height: 27.5vh;
+  width: 100%;
+  border-radius: 10px;
+}
+
+:host ::ng-deep .alert {
+  overflow-x: hidden;
+  &__asset {
+    height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include font(Roboto, normal, 13px, 400);
+    &__name {
+      text-overflow: ellipsis;
+      @include font(Roboto, normal, 13px, 400);
+    }
+    &__details {
+      &__name {
+        @include font(Roboto, normal, 9px, normal);
+        color: #8887a3;
+      }
+    }
+  }
+  .is-not-portfolio {
+    display: none;
+  }
+  .is-portfolio-object {
+    display: block;
+  }
+}

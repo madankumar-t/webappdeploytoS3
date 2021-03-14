@@ -1,0 +1,20 @@
+<div class="action-cards-container">
+  <div class="main-heading">
+    {{ cardsMainTitle }}
+  </div>
+  <div class="cards-wrapper">
+    <div class="card" *ngFor="let item of cardsContent">
+      <div class="card-content">
+        {{ item.content }}
+      </div>
+      <p-button
+        label="{{ item.buttonName }}"
+        icon="{{ item.buttonIcon }}"
+        styleClass="add-new-btn"
+        iconPos="right"
+        (click)="buttonAction.emit(item.id)"
+      >
+      </p-button>
+    </div>
+  </div>
+</div>

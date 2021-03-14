@@ -1,0 +1,64 @@
+<!-- <div class="sidenav" *ngIf="!coreConfig.sidenavbar.hidden">  -->
+<div class="sidenav">
+  <ng-container *ngFor="let menu of sideMenuItems">
+    <div
+      class="sidenav__icons"
+      (click)="navigateToModule(menu)"
+      (mouseenter)="onMenuHover(menu)"
+      (mouseleave)="onMenuLeave(menu)"
+      [ngClass]="link.isActive ? 'active-menu' : ''"
+    >
+      <a
+        [routerLink]="menu.path"
+        class="sidenav__icons--icon"
+        #link="routerLinkActive"
+        [routerLinkActive]="['active', '']"
+        (click)="changeMenu(menu)"
+      >
+        <span
+          [routerLinkActive]="[
+            menu.hoverActiveImageSrc,
+            menu.nonActiveImageSrc
+          ]"
+          [ngClass]="
+            link.isActive ? menu.hoverActiveImageSrc : menu.nonActiveImageSrc
+          "
+        ></span>
+        <span
+          class="sidenav__icons--title"
+          [ngClass]="link.isActive ? 'selected-title' : ''"
+          >{{ menu.title }}</span
+        >
+      </a>
+    </div>
+  </ng-container>
+
+  <div class="bottom-menu">
+    <div class="sidenav-icon">
+      <div class="sidenav-icon__whatsnew">
+        <a href="#" class="sidenav__icons--icon icon">
+          <span class="fa fa-bullhorn"></span
+        ></a>
+        <span class="sidenav-icon__support--title selected-title"
+          >What's New</span
+        >
+      </div>
+    </div>
+    <div class="sidenav-icon" (click)="overlayPanel($event)">
+      <div class="sidenav-icon__support">
+        <a class="sidenav__icons--icon icon">
+          <span class="icon-support"></span
+        ></a>
+        <span class="sidenav-icon__support--title selected-title">Support</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<s-overlay-menu
+  [show]="enable"
+  [overlayEffect]="true"
+  arrow="left-bottom"
+></s-overlay-menu>
+
+<app-support></app-support>

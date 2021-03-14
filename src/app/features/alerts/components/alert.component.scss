@@ -1,0 +1,52 @@
+@import '../../../../styles/styles.scss';
+@mixin AlertChildComp() {
+  border: solid 1px $homepage-border-color;
+  background-color: $background-color-primary;
+  border-radius: 8px;
+}
+.container {
+  margin: 0;
+  height: 100%;
+  @include flexCenter(row);
+  background-color: $container-background;
+  border-top-left-radius: 10px;
+  .homepage {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    width: calc(100% - 2%);
+    height: calc(100vh - 80px);
+    &__object-browser {
+      width: calc(69% - 1px);
+      height: calc(100vh - 287px);
+      border-radius: 8px;
+    }
+    &__alert {
+      width: calc(30% - 1px);
+      height: calc(100vh - 287px);
+      @include AlertChildComp();
+      box-shadow: 0 0 10px 0 rgba(34, 34, 34, 0.1);
+    }
+    &__recent-activities {
+      width: calc(20% - 2px);
+      margin-top: 0.7em;
+      height: calc(100vh - 460px);
+      @include AlertChildComp();
+      box-shadow: 0 0 10px 0 rgba(34, 34, 34, 0.1);
+    }
+    &__manage-objects {
+      width: calc(50% - 22px);
+      margin: 0.7em 10px 0 10px;
+      height: calc(100vh - 460px);
+      @include AlertChildComp();
+      box-shadow: 0 0 10px 0 rgba(34, 34, 34, 0.1);
+    }
+    &__events {
+      width: calc(30% - 2px);
+      margin-top: 0.7em;
+      height: calc(100vh - 460px);
+      @include AlertChildComp();
+      box-shadow: 0 0 10px 0 rgba(34, 34, 34, 0.1);
+    }
+  }
+}

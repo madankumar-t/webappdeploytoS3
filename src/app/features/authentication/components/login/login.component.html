@@ -1,0 +1,104 @@
+<div class="p-grid user">
+  <div class="p-col-6">
+    <div class="box"></div>
+  </div>
+  <div class="p-col-4 user__login">
+    <div class="login">
+      <div class="login__header">Log In</div>
+      <div class="login__form p-mt-4">
+        <form (ngSubmit)="login()" #loginForm="ngForm" class="">
+          <div class="login__form__fields">
+            <label class="login__form__fields--label">
+              <span class="fields-label-text">Email</span>
+            </label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              ngModel
+              class="form-control fields-input"
+              autofocus
+            />
+          </div>
+          <div class="login__form__fields p-mt-1">
+            <label class="login__form__fields--label">
+              <span class="fields-label-text">Password</span>
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              ngModel
+              class="form-control fields-input"
+              maxlength="20"
+            />
+          </div>
+          <div *ngIf="error?.message" class="login__error">
+            {{ error.message }}
+          </div>
+          <div class="login__form__fields p-mt-6">
+            <button type="submit" class="login__form__fields--btn">
+              Login
+              <i *ngIf="isLoading" class="fa fa-spinner fa-spin"></i>
+            </button>
+          </div>
+          <div class="login__form__links p-mt-6">
+            <span>Forgot password?</span>
+            <span>Create an account</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="p-col-2">
+    <div class="box"></div>
+  </div>
+</div>
+
+<!-- <div class="p-col-12 ">
+    <div class="box">
+                <label class="login__form__fields--label">
+                    <span class="fields-label-text">Email</span>
+                </label>
+                <input required id="email" type="email" name="email" class="form-control fields-input" 
+                         autofocus/>
+            </div>
+            <div class="form-group fields-login-margin" ng-class="{ 'mobile-fields-login-margin' : mobileView}">
+                    <label class="fields-label" style="display: flex; justify-content: space-between; padding-right: 9px;" ng-class="{ 'mobile-fields-label' : mobileView}">
+                            <span class="fields-label-text">password</span>
+                    </label>
+                <input required id="password"  name="password"
+                       class="form-control fields-input" maxlength="20" 
+                       />
+            </div>
+            <div class="form-group" style="display: flex; justify-content: space-between; margin-top: 22px;" >
+                <a class="fields-links" >
+                    Forgot password?
+                </a>
+                <a class="fields-links"  href="register.html">Create an
+                    account</a>
+            </div>
+            <div class="form-group" style="margin-top: 22px;" 
+                >
+                <a class="fields-links" ng-click=resendActivationEmail()>Resend the activation email</a>
+            </div>
+            <div class="form-group" style="margin-top: 18px;">
+                <div id='recaptcha_holder'></div>
+            </div>            
+            <div class="form-group" style="margin-top: 32px;" >
+                <button type="submit" class="btn m-b fields-login-button-color"   >login<i class="fa fa-spinner fa-spin" ></i></button>
+            </div>
+            <div class="form-group" style="display: flex; justify-content: space-between; margin-top: 22px;" >
+                <a class="fields-links" >
+                    Forgot password?
+                </a>
+                <a class="fields-links" >Create an
+                    account</a>
+            </div>
+            <div class="form-group" style="margin-top: 22px;" >
+                <a class="fields-links" >Resend the activation email</a>
+            </div>
+            <div ng-hide="testedBrowser || mobileView">
+                <span style="color: red">We apologize but the current browser is not fully supported by EigenPrism; some of the modules may not work. EigenPrism is optimized for Chrome. Please <a href="https://www.google.com/chrome/">click here</a> to download Chrome.</span>
+            </div>
+        </div> -->

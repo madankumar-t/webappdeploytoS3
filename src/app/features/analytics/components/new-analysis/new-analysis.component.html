@@ -1,0 +1,193 @@
+<div *ngIf="visible" (click)="visible = false; onHide.emit($event)"></div>
+<p-dialog
+  header=""
+  [(visible)]="visible"
+  [style]="{ width: '72vw', height: '78.47vh' }"
+  [baseZIndex]="10000"
+  [modal]="true"
+  [closeOnEscape]="true"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [closable]="true"
+  [resizable]="true"
+  [dismissableMask]="true"
+  (onHide)="onHide.emit($event)"
+  styleClass="event-d"
+  [transitionOptions]="'0ms'"
+>
+  <ng-template pTemplate="header">
+    <h5>Pick an analysis type</h5>
+  </ng-template>
+  <div class="toggle-text">
+    <input type="checkbox" id="switch" (click)="compareMode()" /><label
+      for="switch"
+      >Toggle</label
+    >
+    <p>Start in comparison mode<span>Open in comparison mode</span></p>
+  </div>
+  <div class="p-grid container">
+    <div class="p-col-3 rectangle" (click)="onLaunch.emit()">
+      <div class="inner_card" id="selected">
+        <h3 class="rect-heading">Exposure Summary</h3>
+        <p class="rect-content">
+          Visualise & interact with your exposure on a map. View totals, find
+          top assets & drivers of value.
+        </p>
+        <div class="rect-map img1"></div>
+        <p class="launch">
+          Launch
+          <span class="chevron">
+            <i class="fa fa-angle-right"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="p-col-3 rectangle" (click)="onLaunch.emit()">
+      <div class="inner_card">
+        <h3 class="rect-heading">Stratification</h3>
+        <p class="rect-content">
+          Slice & dice your exposure by multiple attributes to determine drivers
+          of value data quality & completeness.
+        </p>
+        <div class="rect-map img2"></div>
+        <p class="launch">
+          Launch
+          <span class="chevron">
+            <i class="fa fa-angle-right"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="p-col-3 rectangle" (click)="onLaunch.emit()">
+      <div class="inner_card">
+        <h3 class="rect-heading">Hazard Overlay</h3>
+        <p class="rect-content">
+          Overlay hazard maps on your assets to determine your exposure to
+          different perils, & identify assets most at risk
+        </p>
+        <div class="rect-map img3"></div>
+        <p class="launch">
+          Launch
+          <span class="chevron">
+            <i class="fa fa-angle-right"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="p-col-3 rectangle" (click)="onLaunch.emit()">
+      <div class="inner_card">
+        <h3 class="rect-heading">Accumulation</h3>
+        <p class="rect-content">
+          Determine accumulation of exposure within regions you define using
+          simple shapes and damage ratios.
+        </p>
+        <div class="rect-map img"></div>
+        <p class="launch">
+          Launch
+          <span class="chevron">
+            <i class="fa fa-angle-right"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="p-col-3 rectangle" (click)="onLaunch.emit()" *ngIf="show">
+      <div class="inner_card">
+        <h3 class="rect-heading">Spider</h3>
+        <p class="rect-content">
+          Automatically find regions of highest accumulation based on a
+          specified accumulation radius and other… more advanced options
+        </p>
+        <div class="rect-map img4"></div>
+        <p class="launch">
+          Launch
+          <span class="chevron">
+            <i class="fa fa-angle-right"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="p-col-3 rectangle">
+      <div class="inner_card">
+        <h3 class="rect-heading">Event Impact</h3>
+        <p class="rect-content">
+          Overlay an event (or group of events) on your exposure and determine
+          impact in terms of intensity, loss… estimates, and drivers of loss.
+          Events can be selected from our library of historical, real time,
+          realistic scenario or user defined events.
+        </p>
+        <div class="rect-map img5"></div>
+        <p class="launch">
+          Launch
+          <span class="chevron">
+            <i class="fa fa-angle-right"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="p-col-3 rectangle" (click)="onLaunch.emit()">
+      <div class="inner_card">
+        <h3 class="rect-heading">Eigen Rover</h3>
+        <p class="rect-content">
+          Automatically surface worst case scenario events by selecting an event
+          set or any group of events
+        </p>
+        <div class="rect-map img"></div>
+        <p class="launch">
+          Launch
+          <span class="chevron">
+            <i class="fa fa-angle-right"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="p-col-3 rectangle" *ngIf="show">
+      <div class="inner_card">
+        <h3 class="rect-heading">Portfolio Impact</h3>
+        <p class="rect-content">
+          Overlay new accounts on your in-force or target portfolio, &
+          automatically determine regions of high… accumulations exceeding set
+          thresholds .
+        </p>
+        <div class="rect-map img6"></div>
+        <p class="launch">
+          Launch
+          <span class="chevron">
+            <i class="fa fa-angle-right"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="p-col-3 rectangle" (click)="onLaunch.emit()">
+      <div class="inner_card">
+        <h3 class="rect-heading">Trend</h3>
+        <p class="rect-content">
+          Visualize your exposure changes over time or view results of multiple
+          event analyses on a timeline
+        </p>
+        <div class="rect-map img7"></div>
+        <p class="launch">
+          Launch
+          <span class="chevron">
+            <i class="fa fa-angle-right"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="p-col-3 rectangle" (click)="onLaunch.emit()">
+      <div class="inner_card">
+        <h3 class="rect-heading">Asset Analysis</h3>
+        <p class="rect-content">
+          Visualise & analyse a single asset, to drill deeper into its
+          attributes, vulnerabilities etc.
+        </p>
+        <div class="rect-map img1"></div>
+        <p class="launch">
+          Launch
+          <span class="chevron">
+            <i class="fa fa-angle-right"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</p-dialog>

@@ -1,0 +1,14 @@
+@import '../../../../../styles/styles.scss';
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: $light-blue;
+  height: 55px;
+  background-color: $header-color-primary;
+  @include font(Roboto, normal, 0.7em, bold);
+  border-bottom-left-radius: 10px;
+}

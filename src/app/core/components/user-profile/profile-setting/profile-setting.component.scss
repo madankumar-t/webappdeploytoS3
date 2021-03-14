@@ -1,0 +1,89 @@
+@import '../../../../../styles/styles.scss';
+
+.profile {
+  :host ::ng-deep .p-card .p-card-body,
+  :host ::ng-deep .p-card .p-card-content {
+    padding: 0px;
+  }
+  :host ::ng-deep .p-card {
+    box-shadow: none !important;
+  }
+  &__image {
+    @include font(Roboto, normal, 11px, normal);
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #e7e7e7;
+    text-align: center;
+    margin-right: 15px;
+    place-items: center;
+    padding-top: 1em;
+  }
+  &__user {
+    &__name {
+      display: block;
+      @include font(Roboto, normal, 0.8em, 500);
+      line-height: 1.82;
+      letter-spacing: normal;
+      color: $light-black;
+    }
+    &__mail {
+      display: block;
+      @include font(Roboto, normal, 0.8em, normal);
+      letter-spacing: normal;
+      color: $color-date-font;
+    }
+  }
+  :host ::ng-deep &__save-button {
+    .p-button {
+      padding: 0.6em 0.8em;
+      width: 105px;
+      background-color: $light-blue;
+    }
+  }
+}
+.fa-user-o:before {
+  font-size: 1.5em;
+}
+.profile-form {
+  label {
+    font-size: 0.82em;
+    margin-bottom: 0.4em;
+  }
+  input {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: solid 1px $disable-color;
+    border-radius: 6px;
+    height: 32px;
+    @include font(Roboto, normal, 0.8em, 500);
+    color: $light-black;
+  }
+  input.disable {
+    background-color: $disable-color;
+  }
+  input.txt-mail {
+    background-color: $disable-background-color;
+  }
+}
+.line {
+  border: none;
+  height: 1px;
+  background-color: $disable-color;
+  margin: 0px;
+}
+:host ::ng-deep .p-button {
+  padding: 0.4rem 1.7rem;
+  @include font(Roboto, normal, 0.7em, bold);
+  border-color: $light-blue;
+  color: $light-blue;
+}
+:host ::ng-deep .save-button {
+  .p-button {
+    padding: 0.6em 0.8em;
+    width: 105px;
+    background-color: $light-blue;
+    color: $header-color-primary;
+  }
+}

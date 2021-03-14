@@ -1,0 +1,7 @@
+<svg id="Icon_Layout" data-name="Icon/Layout" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+  <rect id="Rectangle" width="12" height="12" fill="gray" opacity="0"/>
+  <g id="Layout" transform="translate(0.6 0.6)">
+    <rect id="Rectangle-2" data-name="Rectangle" width="10.8" height="10.8" fill="#666" opacity="0"/>
+    <path id="Combined_Shape" data-name="Combined Shape" d="M3.024,8.64H1.3A1.3,1.3,0,0,1,0,7.344V1.3A1.3,1.3,0,0,1,1.3,0H7.344a1.3,1.3,0,0,1,1.3,1.3V7.344a1.3,1.3,0,0,1-1.3,1.3Zm4.32-.864a.432.432,0,0,0,.432-.432V3.456H3.456v4.32ZM.864,7.344a.432.432,0,0,0,.432.432h1.3V3.456H.864ZM7.776,2.592V1.3A.432.432,0,0,0,7.344.864H1.3A.432.432,0,0,0,.864,1.3v1.3Z" transform="translate(1.08 1.08)" fill="#666"/>
+  </g>
+</svg>

@@ -1,0 +1,103 @@
+<div class="header">
+  <div class="header-wrapper">
+    <div class="header-wrapper__container">
+      <img
+        src="assets/images/logo-eigen.png"
+        alt="logo"
+        class="header-wrapper__container__image"
+      />
+      <span></span>
+      <!-- <div class="header-wrapper__container__logo"> -->
+      <img
+        src="assets/images/logo_brand.svg"
+        alt="logo"
+        class="header-wrapper__container__image"
+      />
+      <!-- </div> -->
+    </div>
+    <div
+      class="header-wrapper__search-box"
+      *ngIf="!route.url.includes('/home/')"
+    >
+      <span
+        class="p-input-icon-left header-wrapper__search-box__container"
+        ng-class="{ active: !route.url.includes('/home/') }"
+      >
+        <i class="pi pi-search" style="padding-left: 3px"></i>
+        <input
+          type="text"
+          [(ngModel)]="search_text"
+          (focus)="onFocus()"
+          pInputText
+          placeholder="Search EigenPrism"
+          (keyup)="search($event)"
+        />
+      </span>
+      <p-button
+        icon="pi pi-plus"
+        styleClass="header-wrapper__btn--submit"
+        iconPos="right"
+        (click)="overlayPanel($event)"
+      >
+      </p-button>
+      <s-overlay-menu
+        [show]="enable"
+        [overlayEffect]="true"
+        arrow="top-right"
+      ></s-overlay-menu>
+    </div>
+    <div class="header-wrapper__user">
+      <div class="p-grid p-jc-end">
+        <div class="p-col-4">
+          <div class="header-wrapper__user__contributor">
+            <div>VR</div>
+            <div>LG</div>
+            <div>AG</div>
+            <div>VR</div>
+          </div>
+        </div>
+        <div
+          class="p-col-4 dropdown-wrapper"
+          *ngIf="!route.url.includes('/home/')"
+        >
+          <span class="line-sep"></span>
+          <p-dropdown
+            [options]="workspaces"
+            [(ngModel)]="selectedWorkspace"
+            optionLabel="name"
+            optionValue="id"
+            (onChange)="changeWorkspace($event)"
+          ></p-dropdown>
+        </div>
+        <div class="p-col-2">
+          <div
+            class="box header-wrapper__user__login"
+            (click)="showSideBar($event)"
+          >
+            <span></span>
+            <i
+              class="fa fa-envelope"
+              aria-hidden="true"
+              [ngClass]="selectedNotification"
+              id="notification"
+            ></i>
+            <div class="circle" [ngClass]="selectedUser" id="user">
+              {{ userName }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<s-pop-up-dialog
+  (closeEvent)="showComingSoon = false"
+  [showComingSoon]="showComingSoon"
+></s-pop-up-dialog>
+
+<s-workspace-browser-dialog
+  *ngIf="wsBrowserOpen"
+  [visible]="wsBrowserOpen"
+  (onHide)="closeBrowser()"
+  [defaultTab]="defaultTab"
+></s-workspace-browser-dialog>

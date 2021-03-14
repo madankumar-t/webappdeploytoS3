@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="768" viewBox="0 0 1280 768">
+  <defs>
+    <clipPath id="clip-Login_1">
+      <rect width="1280" height="768"/>
+    </clipPath>
+  </defs>
+  <g id="Login_1" data-name="Login – 1" clip-path="url(#clip-Login_1)">
+    <rect width="1280" height="768" fill="#fff"/>
+    <text id="Create_an_account" data-name="Create an account" transform="translate(577 594)" fill="#64afde" font-size="16" font-family="Barlow-Regular, Barlow"><tspan x="0" y="0">Create an account</tspan></text>
+    <path id="Path_645" data-name="Path 645" d="M-20337.125-10267.592l396.043,542.533-396.043,579.768h1105.242l-3.473-1122.3Z" transform="translate(20524.902 9913.173)" fill="#364653"/>
+  </g>
+</svg>

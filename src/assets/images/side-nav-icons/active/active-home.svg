@@ -1,0 +1,6 @@
+<svg id="Icon_Home" data-name="Icon/Home" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <rect id="Rectangle" width="28" height="28" fill="gray" opacity="0"/>
+  <g id="Selection">
+    <path id="Subtraction_5" data-name="Subtraction 5" d="M-74.143,2837H-85.857a1.064,1.064,0,0,1-1.1-1.024v-5.465a1.086,1.086,0,0,1-.986-.693.976.976,0,0,1,.327-1.111l6.9-5.464A1.147,1.147,0,0,1-80,2823a1.147,1.147,0,0,1,.71.243l6.9,5.468a.978.978,0,0,1,.328,1.111,1.087,1.087,0,0,1-.986.693v5.461A1.064,1.064,0,0,1-74.143,2837Zm-6.257-6a.6.6,0,0,0-.6.6v2.8a.6.6,0,0,0,.6.6h.8a.6.6,0,0,0,.6-.6v-2.8a.6.6,0,0,0-.6-.6Z" transform="translate(94 -2816)" fill="#2ea7a5"/>
+  </g>
+</svg>

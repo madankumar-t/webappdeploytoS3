@@ -1,0 +1,25 @@
+@import '../styles/styles.scss';
+@include customScrollbar('.container');
+
+.container {
+    margin: 0;
+    overflow: auto;
+    display: flex;
+    &--nav {
+        overflow: hidden;
+        height: calc(100vh - 2.6rem);
+        width: 4.5%;
+        margin: 0;
+    }
+    &--page {
+        overflow: hidden;
+        height: calc(100vh - 2.6rem);
+        background-color: $sidenav-background;
+        width: calc(100% - 4.5%);
+        margin: 0;
+        &.fullscreen {
+            height: 100vh;
+            width: 100%;
+        }
+    }
+}

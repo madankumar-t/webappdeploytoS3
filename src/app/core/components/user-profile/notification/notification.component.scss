@@ -1,0 +1,66 @@
+@import '../../../../../styles/styles.scss';
+@include customScrollbar(':host ::ng-deep .p-tabview-panels');
+
+.content {
+  border-radius: 8px;
+  box-shadow: 0 0 8px 0 rgba(34, 34, 34, 0.1);
+  background-color: #ffffff;
+  img {
+    width: 18px;
+    height: 18px;
+  }
+  .desc {
+    font-family: Roboto;
+    font-size: 11px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.45;
+    letter-spacing: normal;
+    text-align: left;
+    cursor: pointer;
+    color: #222222;
+    .time {
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.45;
+      letter-spacing: normal;
+      text-align: left;
+      color: #808080;
+    }
+  }
+}
+.pi-ellipsis-v:before {
+  font-size: 9px;
+  color: #988686;
+  cursor: pointer;
+}
+:host ::ng-deep .object-count {
+  min-width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 0.6rem;
+  background-color: $light-blue;
+}
+:host ::ng-deep .headerTab {
+  width: 30%;
+  font-size: 0.688rem;
+  line-height: 1.82;
+  font-weight: bold;
+}
+:host ::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  color: $light-blue !important;
+  border-color: $light-blue;
+}
+
+:host
+  ::ng-deep
+  .p-tabview
+  .p-tabview-nav
+  li
+  .p-tabview-nav-link:not(.p-disabled):focus {
+  box-shadow: none;
+}

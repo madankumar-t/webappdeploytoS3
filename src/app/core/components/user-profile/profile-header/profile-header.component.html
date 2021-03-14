@@ -1,0 +1,28 @@
+<div class="p-grid profile-h">
+  <div class="p-col-5 p-pl-4">
+    <span class="profile-h__name">{{ userName }}</span>
+    <span class="profile-h__label" *ngIf="isUserProfile">{{ userLabel }}</span>
+  </div>
+  <div class="p-col-6 p-text-right p-pr-4">
+    <button
+      *ngIf="isUserProfile; else notification"
+      pButton
+      pRipple
+      styleClass="profile-h__login--btn"
+      (click)="logout()"
+      type="button"
+      label="Logout"
+      class="p-button-outlined"
+    ></button>
+  </div>
+  <ng-template #notification>
+    <button
+      pButton
+      pRipple
+      styleClass="profile-h__login--btn"
+      type="button"
+      label="Manage"
+      class="p-button-outlined"
+    ></button>
+  </ng-template>
+</div>

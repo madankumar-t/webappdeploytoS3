@@ -1,0 +1,21 @@
+<div
+  class="overlay"
+  *ngIf="showPopup.visible"
+  (click)="showPopup.visible = false"
+></div>
+<p-dialog
+  [header]="showPopup.header"
+  [(visible)]="showPopup.visible"
+  [baseZIndex]="10000"
+  styleClass="dialog-box"
+>
+  <ng-container *ngIf="showPopup.header == 'Sample Data'">
+    <sample-data></sample-data>
+  </ng-container>
+
+  <ng-container *ngIf="showPopup.header == 'Feedback'"> </ng-container>
+
+  <ng-container *ngIf="showPopup.header == 'About'">
+    <about-us></about-us>
+  </ng-container>
+</p-dialog>

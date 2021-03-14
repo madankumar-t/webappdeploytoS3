@@ -1,0 +1,224 @@
+@import 'settings/variables';
+
+:host ::ng-deep .p-fileupload {
+  display: flex;
+  flex-direction: column-reverse;
+  &.fileChoosed {
+    & .p-fileupload-buttonbar {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    & .p-button [text='Choose another file'] {
+      background-color: $background-color-primary !important;
+      border: solid 0.5px $primary-color !important;
+      color: $primary-color !important;
+    }
+    & .p-fileupload-choose {
+      background-color: $background-color-primary !important;
+      border: solid 0.5px $primary-color !important;
+      color: $primary-color !important;
+      display: none;
+      & .p-button-label {
+        display: none;
+      }
+    }
+    & .p-progressbar {
+      display: none;
+    }
+  }
+  & .p-fileupload-buttonbar {
+    background: none;
+    border: none;
+    padding: 3.25rem 0.75rem 0;
+    & .p-fileupload-choose {
+      background: $primary-color;
+      color: $font-color-primary;
+      border-color: $primary-color;
+      font-family: $font-family-primary;
+      font-size: $font-size-sm;
+    }
+    & .p-button {
+      color: $background-color-primary;
+      background: $primary-color;
+      border: 1px solid $primary-color;
+
+      font-size: $font-size-sm;
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+        box-shadow 0.2s;
+      border-radius: 3px;
+      &:disabled {
+        display: none;
+      }
+    }
+  }
+  & .p-fileupload-content {
+    border: 1px dashed $container-border-color;
+    border-radius: 8px;
+    & .filename {
+      font-size: 10px;
+      width: 80%;
+      margin-top: 5px;
+      &:enabled:hover {
+        border-color: $primary-color;
+      }
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      font-family: $font-family-primary;
+      color: $dark-gray;
+    }
+    & .drag-content-icon {
+      margin-top: 22px;
+      & i {
+        color: $primary-color;
+        font-size: 28px;
+      }
+      & .icon-file {
+        width: 28px;
+        height: 28px;
+      }
+    }
+    & .drag-content-primary-label {
+      margin-top: 15px;
+      font-family: $font-family-primary;
+      font-size: 12px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      letter-spacing: normal;
+      text-align: center;
+    }
+    & .drag-content-secondary-label {
+      margin-top: 4px;
+      font-family: $font-family-primary;
+      font-size: $font-size-sm;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: center;
+      color: $dark-gray;
+    }
+  }
+}
+:host ::ng-deep .p-progressbar {
+  width: 80%;
+  position: absolute;
+  height: 2px !important;
+  top: 20%;
+  left: 10%;
+  .p-progressbar-value {
+    background-color: $primary-color;
+  }
+}
+
+.container {
+  background-color: $background-color-secondary;
+  width: 100%;
+  height: $inner-container-height;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .import-container {
+    width: 46%;
+    background: $background-color-primary;
+    height: 47vh;
+    padding: 92px 121px 36px 119px;
+    border-radius: 12px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__box {
+      width: 83%;
+      height: 35vh;
+      text-align: center;
+    }
+    &__upload {
+      display: flex;
+      flex-direction: column;
+
+      &--container {
+        background: $background-color-primary;
+        padding: 2rem 1rem 1.5rem;
+        border: 1px dashed $container-border-color;
+        border-radius: 8px;
+        position: relative;
+        &.error-container {
+          background-color: $error-background-color;
+        }
+        &.sucess-container {
+          background-color: $sucess-background-color;
+        }
+        & .drag-content-icon {
+          margin-top: 22px;
+          & .icon-file {
+            width: 28px;
+            height: 28px;
+          }
+        }
+
+        & .drag-content-primary-label {
+          margin-top: 17px;
+          font-family: $font-family-primary;
+          font-size: 12px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.33;
+          letter-spacing: normal;
+          text-align: center;
+        }
+        & .drag-content-secondary-label {
+          margin-top: 4px;
+          font-family: $font-family-primary;
+          font-size: $font-size-sm;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.2;
+          letter-spacing: normal;
+          text-align: center;
+          color: $dark-gray;
+        }
+      }
+      &--action {
+        font-family: $font-family-primary;
+        font-size: $font-size-sm;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: center;
+        color: $dark-gray;
+        padding: 3.25rem 0.75rem 0;
+        cursor: pointer;
+
+        &:hover {
+          color: $primary-color;
+        }
+        & i {
+          font-size: 10px;
+          color: $color-gray;
+          margin: 5px;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}

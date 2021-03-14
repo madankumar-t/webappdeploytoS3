@@ -1,0 +1,26 @@
+<div class="main-heading">Recently viewed</div>
+<div class="workspace">
+  <div class="workspace-recentdata">
+    <s-object-list
+      [scrollHeight]="'calc(80vh)'"
+      [objectItemOptions]="exposureItemOptions"
+      [objectList]="exposures"
+    >
+      <ng-template pTemplate="exposure_actions">
+        <span class="box actions__workspace btn-action" (click)="showPopup()"
+          >Manage</span
+        >
+      </ng-template>
+    </s-object-list>
+  </div>
+</div>
+<p-contextMenu
+  #ep
+  [global]="false"
+  [model]="exposureMenu"
+  class="contextMenu"
+></p-contextMenu>
+<s-pop-up-dialog
+  (closeEvent)="showComingSoon = false"
+  [showComingSoon]="showComingSoon"
+></s-pop-up-dialog>

@@ -1,0 +1,19 @@
+<div class="workspace">
+  <div class="workspace-recentdata">
+    <s-object-list
+      [scrollHeight]="'calc(80vh)'"
+      [objectItemOptions]="reportItemOptions"
+      [objectList]="reports"
+    >
+      <ng-template pTemplate="report_actions">
+        <span class="box actions__workspace btn-action" (click)="showPopup()"
+          >View</span
+        >
+      </ng-template>
+    </s-object-list>
+  </div>
+</div>
+<s-pop-up-dialog
+  (closeEvent)="showComingSoon = false"
+  [showComingSoon]="showComingSoon"
+></s-pop-up-dialog>

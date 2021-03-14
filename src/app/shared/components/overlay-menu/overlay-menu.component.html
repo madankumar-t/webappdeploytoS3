@@ -1,0 +1,16 @@
+<ng-container *ngIf="overlayEffect">
+  <div class="overlay" *ngIf="showOverlay" (click)="showOverlay = false"></div>
+</ng-container>
+<p-overlayPanel
+  #op
+  (onHide)="showOverlay = false; hideMenu()"
+  (onShow)="showOverlay = true"
+  [styleClass]="arrow"
+  [baseZIndex]="99999"
+>
+  <p-tieredMenu
+    [model]="items"
+    (click)="closeMenu($event)"
+    styleClass="list-box"
+  ></p-tieredMenu>
+</p-overlayPanel>

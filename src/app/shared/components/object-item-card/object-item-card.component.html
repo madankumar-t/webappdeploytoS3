@@ -1,0 +1,53 @@
+<div class="card-item">
+  <div class="bitmap">
+    <img
+      [src]="getSubTypeImg(cardItem.object_sub_type)"
+      [ngClass]="
+        cardItem.object_sub_type == 'report-template' ? 'tempThumps' : ''
+      "
+      (loaded)="onLoaded($event)"
+      src-fallback="{{ cardOptions['defaultImg'] }}"
+    />
+    <div
+      class="template"
+      *ngIf="
+        cardItem.object_sub_type &&
+        cardItem.object_sub_type == 'report-template'
+      "
+    >
+      Template
+    </div>
+  </div>
+  <div class="content">
+    <div class="p-grid p-align-start p-justify-between">
+      <div class="p-col heading">{{ cardItem.name }}</div>
+      <div class="p-col-2 head-icon">
+        <span
+          [ngClass]="getTypeImg(cardItem.object_type)"
+          class="icon-type"
+        ></span>
+      </div>
+    </div>
+    <div class="details">{{ cardItem.description }}</div>
+    <div class="actions">
+      <div class="p-grid p-align-end p-justify-between">
+        <div class="p-col no-pad">
+          <ng-container *ngIf="actionTemplate">
+            <ng-container *ngTemplateOutlet="actionTemplate"></ng-container>
+          </ng-container>
+        </div>
+        <div class="p-col no-pad item-right">
+          <i
+            class="fa fa-bell btn-icon"
+            *ngIf="cardItem.object_type == 'exposure'"
+            [ngClass]="cardItem.alert_configured == true ? 'active' : ''"
+          ></i>
+          <i
+            class="pi pi-ellipsis-v ml-4 btn-icon"
+            (click)="emitContextMenu($event, cardItem.object_type)"
+          ></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

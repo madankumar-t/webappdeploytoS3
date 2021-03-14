@@ -1,0 +1,300 @@
+// settings import
+@import './settings/variables';
+@import 'settings/media';
+@import 'settings/extendables';
+@import 'settings/mixins';
+@import 'settings/paths';
+@import 'settings/base';
+
+// common scss import
+@import './common';
+
+// import local fonts
+@import './fonts';
+
+// Prime NG overriding styles
+
+.p-focus {
+  box-shadow: none !important;
+  border: solid 0.5px $primary-color !important;
+  background-color: $menu-item-background-color !important;
+}
+
+.p-button:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none !important;
+}
+.p-contextmenu .p-menuitem-link:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none !important;
+}
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none;
+  border-color: none;
+}
+.p-dialog-mask {
+  background-color: $color-red-error;
+}
+
+.icon-ws-filter {
+  background-image: url('../assets/images/icons/filter.svg');
+  background-size: cover;
+  font-size: 12px !important;
+}
+
+.icon-models-dummy {
+  background-image: url('../assets/images/side-nav-icons/default/models.svg');
+  background-size: cover;
+}
+
+.p-overlaypanel .p-overlaypanel-content {
+  padding: 0rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 2.6rem;
+  bottom: 0;
+  right: 0;
+  left: 4.5%;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 10px 0 0 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ui-overlaypanel {
+  &:before {
+    bottom: unset;
+    left: none;
+    position: unset;
+    content: unset;
+  }
+  &:after {
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+  }
+}
+
+.vertical-tab {
+  .p-tabmenu-nav {
+    flex-direction: column !important;
+    border: none;
+  }
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  font-size: 1.7em;
+  color: $color-gray;
+}
+
+[class^='icon-active'],
+[class*=' icon-active'] {
+  font-size: 1.7em;
+  color: $primary-color;
+}
+
+.p-tabmenu {
+  font-family: $font-family-primary;
+  font-size: $font-size-sm;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.45;
+  letter-spacing: normal;
+  text-align: left;
+  color: $light-black;
+  width: 100%;
+  background-color: $background-color-primary;
+  & .p-tabmenu-nav {
+    & .p-tabmenuitem {
+      &:not(.p-highlight):not(.p-disabled) {
+        &:hover {
+          .p-menuitem-link {
+            border-color: $background-color-primary;
+            color: $dark-gray;
+          }
+        }
+      }
+      &.p-highlight {
+        & .p-menuitem-link {
+          background: $background-color-primary;
+          border-color: $primary-color;
+          color: $primary-color;
+          border-left: 3px solid;
+          background-image: linear-gradient(
+            to left,
+            $gredient-end-color,
+            $gredient-start-color 100%
+          );
+          background-color: $profile-background-color;
+          font-weight: 500;
+          line-height: 1.4;
+          & .badge {
+            background-color: $sucess-background-color !important;
+          }
+          & .label-icon {
+            display: block;
+          }
+        }
+      }
+      & .p-menuitem-link {
+        padding: 9px 12px;
+        border: none;
+        border-left: 3px solid $background-color-primary;
+        border-radius: 0;
+        display: flex;
+        justify-content: space-between;
+        text-decoration: none;
+        color: $dark-gray;
+        height: 40px;
+        margin-top: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: left;
+      }
+    }
+  }
+
+  & .p-menuitem-link:focus,
+  .p-menuitem-link:hover {
+    background-color: $menu-item-background-color;
+    font-weight: 500;
+    .p-menuitem-text {
+      color: $primary-color;
+    }
+  }
+  & .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link:not(.p-disabled):focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: none;
+  }
+}
+
+.p-breadcrumb {
+  font-family: $font-family-primary;
+  font-size: $font-size-sm;
+  border: none;
+  li {
+    &.p-breadcrumb-chevron {
+      font-size: $font-size-sm;
+    }
+    .p-menuitem-text {
+      color: $menu-item-text-color;
+      font-size: $font-size-sm;
+    }
+
+    &:last-child {
+      .p-menuitem-text {
+        font-weight: bold !important;
+        font-size: 1rem !important;
+      }
+    }
+  }
+}
+
+.p-button {
+  background: $primary-color;
+  color: $font-color-primary;
+  border-color: $primary-color;
+  font-family: $font-family-primary;
+  font-size: $font-size-sm;
+  border-radius: 6px;
+  margin-right: 8px;
+  &:disabled {
+    color: $container-border-color;
+    border: solid 0.5px $background-color-secondary;
+    background-color: $background-color-secondary;
+  }
+  &.makefullwidth {
+    width: 44%;
+  }
+  &:enabled:active {
+    background: $primary-color;
+    color: $background-color-primary;
+    border-color: $primary-color;
+  }
+  &:enabled:hover {
+    background: $primary-color;
+    color: $background-color-primary;
+    border-color: $primary-color;
+  }
+
+  &.p-button-outlined {
+    background-color: transparent !important;
+    color: $primary-color !important;
+    border: 1px solid;
+
+    &:active,
+    :hover {
+      background-color: transparent !important;
+      color: $primary-color !important;
+    }
+  }
+}
+
+.p-tooltip .p-tooltip-text {
+  background: $background-color-primary !important;
+  color: $color-date-font;
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  border-radius: 7px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  box-shadow: 3px 1px 30px 0 rgba(34, 34, 34, 0.18);
+}
+
+.p-tooltip.p-tooltip-top .p-tooltip-arrow {
+  border-top-color: $background-color-primary;
+}
+
+:host ::ng-deep .commingsoon_popup {
+  text-align: center;
+  & p-button {
+    margin: 0 auto !important;
+    & .p-button-text {
+      width: 78px;
+      height: 24px;
+      color: $background-color-primary;
+      background-color: $color-side-nav-menu;
+      border-radius: 6px;
+      border: none;
+      font-family: Roboto;
+      font-style: normal;
+      font-size: 10px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.4;
+      letter-spacing: normal;
+      text-align: center;
+      color: $background-color-primary;
+      &:active {
+        background-color: $primary-color;
+        color: $background-color-primary;
+        border-color: transparent;
+      }
+      &:hover {
+        background-color: $primary-color;
+        color: $background-color-primary;
+        border-color: transparent;
+      }
+    }
+  }
+}

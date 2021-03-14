@@ -1,0 +1,45 @@
+<div class="event-heading">Events News</div>
+<div class="event">
+  <div
+    class="p-grid p-jc-evenly"
+    *ngFor="let event of recentEvents"
+    (click)="showEventDescriptionDialog(event.contentRender, event.title)"
+  >
+    <div class="p-col-1 p-mt-2">
+      <i class="p-pl-3 event__icon" aria-hidden="true">
+        <img src="assets/images/global.svg" alt="" />
+      </i>
+    </div>
+    <div class="p-col-10 event__para">
+      <div class="p-grid">
+        <div class="p-col-12 p-mt-2 p-pb-0 event__para--date">
+          <p class="box">{{ event.date }}</p>
+        </div>
+        <div class="p-col-12 event__para--title">
+          <P class="box">{{ event.title }}</P>
+        </div>
+        <div
+          class="p-col-12 p-pt-0 p-pm-1 event__para--desc event-show-only-three-lines"
+          [innerHtml]="event.description"
+        ></div>
+      </div>
+    </div>
+    <div class="p-col-1"></div>
+  </div>
+</div>
+<p-dialog
+  [header]="descriptionTitle"
+  [(visible)]="showDescriptionDialog"
+  [modal]="true"
+  [baseZIndex]="10000"
+  [draggable]="true"
+  [resizable]="true"
+  styleClass="event-d"
+>
+  <div class="p-grid event-d__content">
+    <div
+      class="p-col-12 event-d__content--desc"
+      [innerHtml]="descriptionContent"
+    ></div>
+  </div>
+</p-dialog>

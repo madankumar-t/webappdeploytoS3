@@ -1,0 +1,64 @@
+@import 'settings/variables';
+
+.container {
+  margin: 0;
+  height: 100%;
+  background-color: $container-background;
+  border-top-left-radius: 10px;
+  .cards-wrapper {
+    width: 100%;
+    margin: 0px 24px 24px 24px;
+  }
+}
+
+.step-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-family: $font-family-primary;
+  font-size: $font-size-sm;
+  background: $background-color-primary;
+  &__actions {
+    padding: 0.4rem 0.5rem 0 0;
+    & button {
+      width: 96px;
+    }
+  }
+}
+
+.step-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  &__menu-area {
+    width: 13%;
+    height: 100vh;
+    margin-top: 5px;
+    font-family: $font-family-primary;
+    font-size: $font-size-sm;
+    background: $background-color-primary;
+    & .p-menuitem-link {
+      display: flex;
+      justify-content: space-between;
+      text-decoration: none;
+    }
+    &--icon {
+      color: $primary-color;
+      display: none;
+    }
+    &--index {
+      width: 16px;
+      height: 16px;
+      background-color: #f4f4f4;
+      padding: 2px 5px;
+      margin: 8px 12px 8px 10px;
+      border-radius: 50px;
+    }
+    & .p-tabmenu {
+      width: 100%;
+    }
+  }
+  &__content-area {
+    width: 87%;
+  }
+}

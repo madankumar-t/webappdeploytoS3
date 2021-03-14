@@ -1,0 +1,34 @@
+<p-virtualScroller
+  #vs
+  [value]="objectList"
+  [scrollHeight]="scrollHeight"
+  [itemSize]="itemSize"
+  [rows]="rows"
+  [minBufferPx]="minBufferPx"
+  [maxBufferPx]="maxBufferPx"
+  [lazy]="true"
+  (onLazyLoad)="loadContent($event)"
+>
+  <ng-template pTemplate="item" let-cardsitem>
+    <s-object-item-card
+      [cardItem]="cardsitem"
+      [cardOptions]="objectItemOptions"
+    >
+      <ng-template pTemplate="exposure_actions" *ngIf="exposureActionTemplate">
+        <ng-container *ngTemplateOutlet="exposureActionTemplate"></ng-container>
+      </ng-template>
+      <ng-template pTemplate="report_actions" *ngIf="reportActionTemplate">
+        <ng-container *ngTemplateOutlet="reportActionTemplate"></ng-container>
+      </ng-template>
+      <ng-template pTemplate="model_actions" *ngIf="modelActionTemplate">
+        <ng-container *ngTemplateOutlet="modelActionTemplate"></ng-container>
+      </ng-template>
+      <ng-template pTemplate="analysis_actions" *ngIf="analysisActionTemplate">
+        <ng-container *ngTemplateOutlet="analysisActionTemplate"></ng-container>
+      </ng-template>
+    </s-object-item-card>
+  </ng-template>
+  <!-- <ng-template let-car pTemplate="loadingItem">
+    Loading...
+  </ng-template> -->
+</p-virtualScroller>

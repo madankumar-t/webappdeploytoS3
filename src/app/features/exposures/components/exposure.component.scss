@@ -1,0 +1,19 @@
+@import '../../../../styles/styles.scss';
+@mixin AnalyticChildComp() {
+  border: solid 1px $homepage-border-color;
+  background-color: $background-color-primary;
+  border-radius: 8px;
+}
+
+.container {
+  margin: 0;
+  height: 100%;
+  @include flexFlow(column, flex-start, flex-start);
+  background-color: $container-background;
+  border-top-left-radius: 10px;
+
+  .cards-wrapper {
+    width: 100%;
+    margin: 0px 24px 24px 24px;
+  }
+}

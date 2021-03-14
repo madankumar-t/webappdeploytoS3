@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="step-header">
+    <p-breadcrumb [model]="breadcrumbData"></p-breadcrumb>
+    <div class="step-header__actions">
+      <ng-container *ngIf="import_status == 'none'">
+        <button
+          pButton
+          type="button"
+          label="Next"
+          disabled
+          class="btn-action"
+        ></button>
+      </ng-container>
+      <ng-container *ngIf="import_status == 'upload-sucess'">
+        <button
+          pButton
+          type="button"
+          label="Upload again"
+          class="p-button-outlined btn-action"
+        ></button>
+        <button pButton type="button" label="Next" class="btn-action"></button>
+      </ng-container>
+    </div>
+  </div>
+  <div class="step-container">
+    <div class="step-container__menu-area">
+      <p-tabMenu
+        [model]="items"
+        styleClass="vertical-tab"
+        [activeItem]="items[0]"
+      >
+        <ng-template pTemplate="item" let-item let-i="index">
+          <span class="label_item">
+            <span class="step-container__menu-area--index badge">
+              {{ i + 1 }}
+            </span>
+            <span class="step-container__menu-area--lable">{{
+              item.label
+            }}</span>
+          </span>
+          <span
+            class="pi pi-angle-right step-container__menu-area--icon label-icon"
+          ></span>
+        </ng-template>
+      </p-tabMenu>
+    </div>
+    <div class="step-container__content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

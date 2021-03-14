@@ -1,0 +1,28 @@
+version: 0.2
+
+env:
+  variables:
+    CACHE_CONTROL: '86400'
+    S3_BUCKET: 'http://eigenprism-4.0.1.s3-website-us-east-1.amazonaws.com'
+    BUILD_FOLDER: 'dist'
+phases:
+  pre_build:
+    commands:
+      - echo "Entered the pre-build phase"
+
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+      - npm install -g @angular/cli
+  build:
+    commands:
+      - echo Build started
+      - npm run build:prod
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'dist/eigen-risk'
+  discard-paths: no

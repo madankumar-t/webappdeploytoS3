@@ -1,0 +1,24 @@
+@import '../../../../../styles/styles.scss';
+
+.profile-h {
+  background-color: $header-color-primary;
+  border-top-left-radius: 10px;
+  margin: 0;
+  align-items: center;
+  height: 55px;
+  .profile-h__name {
+    @include font($font-color-primary, normal, 0.875em, bold);
+    color: #222235;
+    margin-right: 8px;
+  }
+  &__label {
+    @include font(Roboto, normal, 0.6em, normal);
+    color: #808080;
+  }
+}
+:host ::ng-deep .profile-h .p-button {
+  padding: 0.3rem 1rem;
+  @include font(Roboto, normal, 0.7em, bold);
+  border-color: $light-blue;
+  color: $light-blue;
+}

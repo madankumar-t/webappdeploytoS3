@@ -1,0 +1,74 @@
+@import '../../../../styles/styles.scss';
+:host ::ng-deep .sidebar.p-sidebar {
+  height: calc(100% - 2.6rem);
+  bottom: 0;
+  top: auto;
+  border-top-left-radius: 0.6em;
+  border-bottom-left-radius: 0.6em;
+  width: 37.2%;
+  background-color: $profile-background-color;
+  padding: 0;
+  .p-sidebar-close {
+    width: 3em;
+    height: 3em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    :hover {
+      background-color: transparent;
+      background: transparent;
+    }
+  }
+}
+:host ::ng-deep .p-sidebar .p-sidebar-close:enabled:hover {
+  background-color: $background-color-primary;
+}
+:host ::ng-deep .p-sidebar .p-sidebar-close:focus {
+  box-shadow: none;
+}
+
+:host ::ng-deep .profile {
+  .p-accordion-header-link,
+  .p-accordion-header-link:hover,
+  .p-accordion-header-link:active {
+    height: 42px;
+    background-color: $header-color-primary !important;
+    border: none;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .p-highlight {
+    .p-accordion-header-link {
+      color: $light-blue !important;
+    }
+  }
+  .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
+    margin-right: 0.5rem;
+    position: absolute;
+    right: 0;
+  }
+
+  .p-accordion-header-link:focus {
+    box-shadow: none !important;
+  }
+  .p-accordion-tab {
+    margin-top: 0.6em;
+    border: none;
+  }
+  .profile-setting {
+    .p-accordion-content {
+      border: none;
+      margin-left: 1em;
+      margin-right: 1em;
+      padding-top: 0;
+    }
+  }
+  .notification {
+    .p-accordion-content {
+      border: none;
+      padding-top: 1px;
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+  }
+}
